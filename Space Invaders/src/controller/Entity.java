@@ -14,8 +14,8 @@ public abstract class Entity {
 	private int x;
 	private int y;
 	
-	public int height;
-	public int width;
+	public int hauteur;
+	public int largeur;
 	
 	public boolean enVie = true;
 	
@@ -42,19 +42,19 @@ public abstract class Entity {
 	
 
 	/**
-	 * @return the height
+	 * @return the hauteur
 	 */
-	public int getHeight() {
-		return height;
+	public int getHauteur() {
+		return hauteur;
 	}
 
 
 
 	/**
-	 * @return the width
+	 * @return the largeur
 	 */
-	public int getWidth() {
-		return width;
+	public int getLargeur() {
+		return largeur;
 	}
 
 

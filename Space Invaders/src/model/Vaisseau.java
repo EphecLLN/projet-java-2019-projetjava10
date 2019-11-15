@@ -5,7 +5,7 @@ package model;
 
 import view.Map;
 /**
- * @author gauthierbohyn
+ * @author tongr
  *
  */
 public class Vaisseau {

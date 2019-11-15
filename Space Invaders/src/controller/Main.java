@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package controller;
 
@@ -13,13 +13,13 @@ import fr.bordeaux.poo.View;
  */
 public class Main {
 
-	
+
 	public static void main(String[] args) {
-		
-	
-		
-		
+
+
+
+
 
 	}
-	
+
 }

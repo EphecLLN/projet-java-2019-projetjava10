@@ -1,5 +1,12 @@
+/**
+ * 
+ */
 package model;
 
-public class jeu {
+/**
+ * @author arnog
+ *
+ */
+public class Jeu {
 
 }

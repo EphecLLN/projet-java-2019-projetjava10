@@ -14,7 +14,7 @@ public class Map {
 	
 	
 	public final static int VAISSEAU_HEIGHT=33;
-	public final static int VAISSEAUP_WIDTH=80;
+	public final static int VAISSEAU_WIDTH=80;
 	public final static int VAISSEAU_START_X=450;
 	public final static int VAISSEAU_START_Y=400;
 	

@@ -54,7 +54,7 @@ public class View extends JFrame {
 				
 		//The ship
 		labelShip = new JLabel(iconShip);
-		labelShip.setBounds(g.getShip().getX(), g.getShip().getY(), Map.SHIP_WIDTH, Map.SHIP_HEIGHT);
+		labelShip.setBounds(g.getShip().getX(), g.getShip().getY(), Map.VAISSEAU_WIDTH, Map.VAISSEAU_HEIGHT);
 		gamePanel.add(labelShip);
 				
 		

@@ -6,7 +6,7 @@ package model;
 import view.Map;
 
 /**
- * @author arnog
+ * @author gauthierbohyn
  * Classe representant le jeu
  */
 public class Jeu {

@@ -7,6 +7,8 @@ package controller;
  * @author gauthierbohyn
  *
  */
+
+//test
 public abstract class Entity {
 
 	private int x;

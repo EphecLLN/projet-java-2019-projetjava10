@@ -35,8 +35,8 @@ public class Controller implements KeyListener{
 		double y = vaisseauLabel.getBounds().getY();
 		double largeur = vaisseauLabel.getBounds().getWidth();
 		double hauteur = vaisseauLabel.getBounds().getHeight();
-		g.getVaisseau().setX((int)x);
-		g.getVaisseau().setY((int)y);
+		j.getVaisseau().setX((int)x);
+		j.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
 	}
 	
@@ -46,8 +46,8 @@ public class Controller implements KeyListener{
 		double y = vaisseauLabel.getBounds().getY();
 		double width = vaisseauLabel.getBounds().getWidth();
 		double height = vaisseauLabel.getBounds().getHeight();
-		g.getVaisseau().setX((int)x);
-		g.getVaisseau().setY((int)y);
+		j.getVaisseau().setX((int)x);
+		j.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)width, (int)height);
 	}
 	

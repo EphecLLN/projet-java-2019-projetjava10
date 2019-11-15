@@ -56,7 +56,7 @@ public class View {
 
 		//Icons
 		//iconShip = new ImageIcon(this.getClass().getResource(img.iconInvader));
-		iconShip = new ImageIcon(this.getClass().getResource("ship.gif"));
+		iconShip = new ImageIcon(this.getClass().getResource("ship.png"));
 				
 		//The ship
 		labelVaisseau = new JLabel(iconShip);

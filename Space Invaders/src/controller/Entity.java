@@ -14,13 +14,13 @@ public abstract class Entity {
 	private int x;
 	private int y;
 	
-	public int height;
-	public int width;
+	public int hauteur;
+	public int largeur;
 	
-	public boolean isAlive = true;
+	public boolean enVie = true;
 	
-	public boolean isAlive() {
-		return isAlive;
+	public boolean enVie() {
+		return enVie;
 	}
 
 	/**
@@ -42,27 +42,27 @@ public abstract class Entity {
 	
 
 	/**
-	 * @return the height
+	 * @return the hauteur
 	 */
-	public int getHeight() {
-		return height;
+	public int getHauteur() {
+		return hauteur;
 	}
 
 
 
 	/**
-	 * @return the width
+	 * @return the largeur
 	 */
-	public int getWidth() {
-		return width;
+	public int getLargeur() {
+		return largeur;
 	}
 
 
 	/**
-	 * @param isAlive the isAlive to set
+	 * @param enVie the enVie to set
 	 */
-	public void setAlive(boolean isAlive) {
-		this.isAlive = isAlive;
+	public void setenVie(boolean enVie) {
+		this.enVie = enVie;
 	}
 	
 	public abstract void nextTurn();

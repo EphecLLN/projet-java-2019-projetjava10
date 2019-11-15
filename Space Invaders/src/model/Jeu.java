@@ -7,12 +7,12 @@ import view.Map;
 
 /**
  * @author arnog
- * Classe représentant le jeu
+ * Classe reprï¿½sentant le jeu
  */
 public class Jeu {
 
 /**
- * On créé le Vaisseau
+ * On crï¿½ï¿½ le Vaisseau
  */
 	
 	protected Vaisseau vaisseau;

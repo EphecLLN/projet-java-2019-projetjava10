@@ -20,11 +20,11 @@ import view.Map;
  */
 public class Controller implements KeyListener{
 	private JLabel vaisseauLabel;
-	private Jeu g;
+	private Jeu j;
 	private View v;
 	
-	public Controller(View v , Jeu g) {
-		this.g = g;
+	public Controller(View v , Jeu j) {
+		this.j = j;
 		this.v = v;
 		this.vaisseauLabel = v.getLabelShip();
 	}

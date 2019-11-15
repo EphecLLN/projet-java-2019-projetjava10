@@ -15,7 +15,7 @@ public class Jeu {
  * On cree le Vaisseau
  */
 	
-	protected Vaisseau vaisseau;
+	 Vaisseau vaisseau;
 	
 	public Jeu() {
 		

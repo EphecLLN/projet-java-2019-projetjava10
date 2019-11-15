@@ -7,7 +7,7 @@ import view.Map;
 
 /**
  * @author arnog
- * Classe repr�sentant le jeu
+ * Classe representant le jeu
  */
 public class Jeu {
 

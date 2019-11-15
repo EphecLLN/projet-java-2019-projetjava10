@@ -26,7 +26,7 @@ public class View extends JFrame {
 	JLabel labelShip;
 	
 	
-	public View(Game g) {
+	public View(Jeu g) {
 		this.g = g;
 	}
 	

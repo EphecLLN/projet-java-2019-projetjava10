@@ -17,10 +17,10 @@ public abstract class Entity {
 	public int height;
 	public int width;
 	
-	public boolean isAlive = true;
+	public boolean enVie = true;
 	
-	public boolean isAlive() {
-		return isAlive;
+	public boolean enVie() {
+		return enVie;
 	}
 
 	/**
@@ -59,10 +59,10 @@ public abstract class Entity {
 
 
 	/**
-	 * @param isAlive the isAlive to set
+	 * @param enVie the enVie to set
 	 */
-	public void setAlive(boolean isAlive) {
-		this.isAlive = isAlive;
+	public void setenVie(boolean enVie) {
+		this.enVie = enVie;
 	}
 	
 	public abstract void nextTurn();

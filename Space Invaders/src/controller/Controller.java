@@ -19,42 +19,45 @@ import view.Map;
  *
  */
 public class Controller implements KeyListener{
-	private JLabel shipLabel;
+	private JLabel vaisseauLabel;
 	private Jeu g;
 	private View v;
 	
 	public Controller(View v , Jeu g) {
 		this.g = g;
 		this.v = v;
-		this.shipLabel = v.getLabelShip();
+		this.vaisseauLabel = v.getLabelShip();
 	}
 	
-	private void moveRight() {
-		double x = shipLabel.getBounds().getX()+Map.MOVE_VAISSEAU;
-		double y = shipLabel.getBounds().getY();
-		double width = shipLabel.getBounds().getWidth();
-		double height = shipLabel.getBounds().getHeight();
+	
+	private void bougerGauche() {
+		double x = vaisseauLabel.getBounds().getX()-Map.MOVE_VAISSEAU;
+		double y = vaisseauLabel.getBounds().getY();
+		double largeur = vaisseauLabel.getBounds().getWidth();
+		double hauteur = vaisseauLabel.getBounds().getHeight();
 		g.getVaisseau().setX((int)x);
 		g.getVaisseau().setY((int)y);
-		shipLabel.setBounds((int)x, (int) y, (int)width, (int)height);
+		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
 	}
 	
-	private void moveLeft() {
-		double x = shipLabel.getBounds().getX()-Map.MOVE_VAISSEAU;
-		double y = shipLabel.getBounds().getY();
-		double width = shipLabel.getBounds().getWidth();
-		double height = shipLabel.getBounds().getHeight();
+	
+	private void bougerDroite() {
+		double x = vaisseauLabel.getBounds().getX()+Map.MOVE_VAISSEAU;
+		double y = vaisseauLabel.getBounds().getY();
+		double width = vaisseauLabel.getBounds().getWidth();
+		double height = vaisseauLabel.getBounds().getHeight();
 		g.getVaisseau().setX((int)x);
 		g.getVaisseau().setY((int)y);
-		shipLabel.setBounds((int)x, (int) y, (int)width, (int)height);
+		vaisseauLabel.setBounds((int)x, (int) y, (int)width, (int)height);
 	}
+	
 	
 	
 	@Override
 	public void keyPressed(KeyEvent kev) {
 		switch (kev.getKeyCode()) {
-			case KeyEvent.VK_LEFT: moveLeft();break;
-			case KeyEvent.VK_RIGHT: moveRight();break;
+			case KeyEvent.VK_LEFT: bougerGauche();break;
+			case KeyEvent.VK_RIGHT: bougerDroite();break;
 		}
 	}
 

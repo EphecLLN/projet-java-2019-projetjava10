@@ -1,12 +1,12 @@
 /**
  * 
  */
-package controller;
+package model;
 
 /**
  * @author gauthierbohyn
  *
  */
-public class Player {
+public class joueur {
 
 }

@@ -10,15 +10,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.bordeaux.poo.Game;
-import fr.bordeaux.poo.Map;
-import fr.bordeaux.poo.Ship;
-
-
+import model.Jeu;
 
 public class View extends JFrame {
 
-	Game g;
+	Jeu g;
 	
 	JFrame frame;
 	

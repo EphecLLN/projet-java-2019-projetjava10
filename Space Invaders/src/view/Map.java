@@ -18,6 +18,6 @@ public class Map {
 	public final static int SHIP_START_X=450;
 	public final static int SHIP_START_Y=400;
 	
-	public final static int MOVE_SHIP=10;
+	public final static int MOVE_VAISSEAU=10;
 
 }

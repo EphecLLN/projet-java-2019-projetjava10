@@ -10,19 +10,19 @@ package controller;
 public class Timer {
 
 	private boolean crash;
-	private boolean victory;
+	private boolean victoire;
 	
 	
 	
 	
 	/**
 	 * @param crash
-	 * @param victory
+	 * @param victoire
 	 */
-	public Timer(boolean crash, boolean victory) {
+	public Timer(boolean crash, boolean victoire) {
 		super();
 		this.crash = crash;
-		this.victory = victory;
+		this.victoire = victoire;
 	}
 	/**
 	 * @return the crash
@@ -37,16 +37,16 @@ public class Timer {
 		this.crash = crash;
 	}
 	/**
-	 * @return the victory
+	 * @return the victoire
 	 */
-	public boolean isVictory() {
-		return victory;
+	public boolean isVictoire() {
+		return victoire;
 	}
 	/**
-	 * @param victory the victory to set
+	 * @param victoire the victoire to set
 	 */
-	public void setVictory(boolean victory) {
-		this.victory = victory;
+	public void setVictoire(boolean victoire) {
+		this.victoire = victoire;
 	}
 	
 	

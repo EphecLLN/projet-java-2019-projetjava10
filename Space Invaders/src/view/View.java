@@ -15,6 +15,8 @@ import model.Jeu;
 public class View {
 
 	Jeu g;
+	Img img = new Img();
+	
 	
 	JFrame frame;
 	
@@ -23,7 +25,8 @@ public class View {
 	
 	JPanel gamePanel;
 	
-	JLabel labelShip;
+	JLabel labelVaisseau;
+	
 	
 	
 	public View(Jeu g) {
@@ -49,13 +52,16 @@ public class View {
 		frame.getContentPane().add(gamePanel, BorderLayout.CENTER);
 		gamePanel.setLayout(null);
 		
+	
+
 		//Icons
+		//iconShip = new ImageIcon(this.getClass().getResource(img.iconInvader));
 		iconShip = new ImageIcon(this.getClass().getResource("ship.gif"));
 				
 		//The ship
-		labelShip = new JLabel(iconShip);
-		labelShip.setBounds(g.getVaisseau().getX(), g.getVaisseau().getY(), Map.VAISSEAU_WIDTH, Map.VAISSEAU_HEIGHT);
-		gamePanel.add(labelShip);
+		labelVaisseau = new JLabel(iconShip);
+		labelVaisseau.setBounds(g.getVaisseau().getX(), g.getVaisseau().getY(), Map.VAISSEAU_WIDTH, Map.VAISSEAU_HEIGHT);
+		gamePanel.add(labelVaisseau);
 				
 		
 		frame.setSize(dim);
@@ -68,7 +74,7 @@ public class View {
 	
 
 	public JLabel getLabelShip() {
-		return labelShip;
+		return labelVaisseau;
 	}
 
 }

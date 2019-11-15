@@ -10,11 +10,11 @@ import view.Map;
  */
 public class Vaisseau {
 
-	protected int x;
-	protected int y;
+	 int x;
+	 int y;
 	
-	protected int width;
-	protected int height;
+	 int width;
+	 int height;
 
 	public Vaisseau(int x , int y) {
 		this.x= x;

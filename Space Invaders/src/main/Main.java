@@ -5,6 +5,7 @@ package main;
 
 import model.Jeu;
 import view.View;
+import controller.Controller;
 /**
  * @author gauthierbohyn
  *
@@ -17,9 +18,9 @@ public class Main {
 		View v = new View(g);
 		v.init();
 		
-		//Controller controller = new Controller(v , g);
-		//v.getFrame().addKeyListener(controller);
-		//v.getFrame().setFocusable(true);
+		Controller controller = new Controller(v , g);
+		v.getFrame().addKeyListener(controller);
+		v.getFrame().setFocusable(true);
 
 
 

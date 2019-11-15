@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 
 import model.Jeu;
 
-public class View extends JFrame {
+public class View {
 
 	Jeu g;
 	
@@ -54,7 +54,7 @@ public class View extends JFrame {
 				
 		//The ship
 		labelShip = new JLabel(iconShip);
-		labelShip.setBounds(g.getShip().getX(), g.getShip().getY(), Map.VAISSEAU_WIDTH, Map.VAISSEAU_HEIGHT);
+		labelShip.setBounds(g.getVaisseau().getX(), g.getVaisseau().getY(), Map.VAISSEAU_WIDTH, Map.VAISSEAU_HEIGHT);
 		gamePanel.add(labelShip);
 				
 		

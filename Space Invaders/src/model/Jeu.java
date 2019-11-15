@@ -12,7 +12,7 @@ import view.Map;
 public class Jeu {
 
 /**
- * On cr�� le Vaisseau
+ * On cree le Vaisseau
  */
 	
 	protected Vaisseau vaisseau;

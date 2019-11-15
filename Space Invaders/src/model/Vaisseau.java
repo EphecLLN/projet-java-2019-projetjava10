@@ -19,8 +19,8 @@ public class Vaisseau {
 	public Vaisseau(int x , int y) {
 		this.x= x;
 		this.y= y;
-		this.width= Map.SHIP_WIDTH;
-		this.height= Map.SHIP_HEIGHT;
+		this.width= Map.VAISSEAU_WIDTH;
+		this.height= Map.VAISSEAU_HEIGHT;
 	}
 
 	/**

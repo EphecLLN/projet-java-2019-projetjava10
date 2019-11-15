@@ -11,11 +11,11 @@ import view.Map;
  */
 public class Jeu {
 
-/**
- * On cree le Vaisseau
- */
+	/**
+	 * On cree le Vaisseau
+	 */
 	
-	 Vaisseau vaisseau;
+	Vaisseau vaisseau;
 	
 	public Jeu() {
 		

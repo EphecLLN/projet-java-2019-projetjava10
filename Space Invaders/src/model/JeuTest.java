@@ -19,18 +19,19 @@ class JeuTest {
 	
 	Jeu jeu = new Jeu();
 /**
- * @Test getVaisseau
+ *  TestGetVaisseau
  *  Verifier si ce que l'on reçoit du getVaisseau est bien egale a la valeur de la variable vaisseau
  */
-	
+	@Test
 	void testSetVaisseau() {
-		  if (jeu.vaisseau==jeu.getVaisseau()) {
-				  	System.out.print("La valeur de getVaisseau est bien egale vaiseau \n");
-			     }
-		  		else {
-		        	fail("Erreur dans getVaisseau");
-		        }  
+		
+			if (jeu.vaisseau==jeu.getVaisseau()) {
+				System.out.print("La valeur de getVaisseau est bien egale vaiseau \n");
+			}
+			else {
+				fail("Erreur dans getVaisseau");
+			}  
+		}
 	}
-}
 
 

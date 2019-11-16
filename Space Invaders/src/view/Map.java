@@ -4,7 +4,7 @@
 package view;
 
 /**
- * @author gauthierbohyn
+ * @author arnogodart
  *
  */
 public class Map {

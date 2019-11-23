@@ -10,7 +10,7 @@ import controller.Controller;
  * @author gauthierbohyn
  *
  */
-public class Main {
+public class Test {
 
 	public static void main(String[] args) {
 		Jeu g = new Jeu();

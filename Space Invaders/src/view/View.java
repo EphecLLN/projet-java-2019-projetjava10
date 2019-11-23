@@ -100,7 +100,7 @@ public class View {
 		Enumeration<Ennemi> ei = labelInvaders.keys();
 		while  (ei.hasMoreElements()) {
 			Ennemi i = ei.nextElement();
-			if (i.enVie) refreshLabelEntity(labelInvaders.get(i), i);
+			if (i.isEnVie()) refreshLabelEntity(labelInvaders.get(i), i);
 		}
 		
 	}

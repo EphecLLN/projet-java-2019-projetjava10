@@ -30,5 +30,12 @@ public class Map {
 	 * Bouge de 15 vers la droite ou vers la gauche
 	 */
 	public final static int MOVE_VAISSEAU=10;
+	public final static int MOVE_ENNEMI_X=10;
+	public final static int MOVE_ENNEMI_Y=40;
+	public final static int MOVE_MISSILE=10;
+	
+	public final static int ENNEMI_HEIGHT=36;
+	public final static int ENNEMI_WIDTH=55;
+	public final static int ENNEMI_START_Y=50;
 
 }

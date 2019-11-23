@@ -4,23 +4,20 @@
 package model;
 
 import view.Map;
+import controller.Entity;
 /**
  * @author tongr
  *
  */
-public class Vaisseau {
+public class Vaisseau extends Entity {
 
-	 int x;
-	 int y;
 	
-	 int width;
-	 int height;
 
 	public Vaisseau(int x , int y) {
 		this.x= x;
 		this.y= y;
-		this.width= Map.VAISSEAU_WIDTH;
-		this.height= Map.VAISSEAU_HEIGHT;
+		this.largeur= Map.VAISSEAU_WIDTH;
+		this.hauteur= Map.VAISSEAU_HEIGHT;
 	}
 
 	/**
@@ -55,28 +52,34 @@ public class Vaisseau {
 	 * @return the width
 	 */
 	public int getWidth() {
-		return width;
+		return largeur;
 	}
 
 	/**
 	 * @param width the width to set
 	 */
 	public void setWidth(int width) {
-		this.width = width;
+		this.largeur = width;
 	}
 
 	/**
 	 * @return the height
 	 */
 	public int getHeight() {
-		return height;
+		return hauteur;
 	}
 
 	/**
 	 * @param height the height to set
 	 */
 	public void setHeight(int height) {
-		this.height = height;
+		this.hauteur = height;
+	}
+
+	@Override
+	public void nextTurn() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

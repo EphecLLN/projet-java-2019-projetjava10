@@ -11,11 +11,11 @@ package controller;
 //test
 public abstract class Entity {
 
-	private int x;
-	private int y;
+	 protected int x;
+	 protected int y;
 	
-	public int hauteur;
-	public int largeur;
+	 protected int hauteur;
+	 protected int largeur;
 	
 	public boolean enVie = true;
 	

@@ -10,7 +10,7 @@ import controller.Controller;
  * @author gauthierbohyn
  *
  */
-public class Main {
+public class Test {
 
 	public static void main(String[] args) {
 		Jeu g = new Jeu();
@@ -21,10 +21,6 @@ public class Main {
 		Controller controller = new Controller(v , g);
 		v.getFrame().addKeyListener(controller);
 		v.getFrame().setFocusable(true);
-
-
-
-
 
 	}
 }

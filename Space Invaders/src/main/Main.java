@@ -22,10 +22,6 @@ public class Main {
 		v.getFrame().addKeyListener(controller);
 		v.getFrame().setFocusable(true);
 
-
-
-
-
 	}
 }
 

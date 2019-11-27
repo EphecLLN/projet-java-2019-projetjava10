@@ -52,7 +52,9 @@ public class Controller implements KeyListener{
 	}
 	
 	
-	
+	/**
+	 * Fonction permettant de réaliser une action quand on APPUYE sur une touche du clavier
+	 */
 	@Override
 	public void keyPressed(KeyEvent kev) {
 		switch (kev.getKeyCode()) {

@@ -4,7 +4,14 @@
 package model;
 
 import java.util.ArrayList;
+
 import java.util.List;
+import java.util.Random;
+
+import view.Map;
+import controller.Missile;
+import model.Vaisseau;
+import controller.Entity;
 
 /**
  * @author gauthierbohyn
@@ -15,15 +22,10 @@ public class Jeu {
 	/**
 	 * On cree le Vaisseau
 	 */
-<<<<<<< HEAD
 	private List<Ennemi> ennemis;
 	private List<Missile> missiles;
 	protected Vaisseau vaisseau;
 	private Random rand;
-=======
-	private List<Ennemi> ennemi;
-	protected Vaisseau vaisseau; 
->>>>>>> 1fc2945f942396c06508082eaa55d54a87e574cc
 	
 	public Jeu() {
 		ennemis = new ArrayList<Ennemi>();
@@ -35,7 +37,7 @@ public class Jeu {
 		ennemis.add(new Ennemi(x, y, dir));
 	}
 	
-	Missile createMissile(int x, int y, boolean joueur) {
+	public Missile createMissile(int x, int y, boolean joueur) {
 		Missile m = new Missile(x, y, joueur);
 		missiles.add(m);
 		return m;
@@ -71,7 +73,7 @@ public class Jeu {
 	
 	public boolean checkJoueurCrash() {
 		for (Missile m : missiles) {
-			if (!m.joueur && checkCrash(vaisseau, m)) return true;
+			if (!m.player && checkCrash(vaisseau, m)) return true;
 		}
 		for (Ennemi i : ennemis) {
 			if (checkCrash(vaisseau, i)) return true;
@@ -136,6 +138,49 @@ public class Jeu {
 	public void setEnnemi(List<Ennemi> ennemi) {
 		this.ennemis = ennemi;
 	}
+
+	/**
+	 * @return the ennemis
+	 */
+	public List<Ennemi> getEnnemis() {
+		return ennemis;
+	}
+
+	/**
+	 * @param ennemis the ennemis to set
+	 */
+	public void setEnnemis(List<Ennemi> ennemis) {
+		this.ennemis = ennemis;
+	}
+
+	/**
+	 * @return the missiles
+	 */
+	public List<Missile> getMissiles() {
+		return missiles;
+	}
+
+	/**
+	 * @param missiles the missiles to set
+	 */
+	public void setMissiles(List<Missile> missiles) {
+		this.missiles = missiles;
+	}
+
+	/**
+	 * @return the rand
+	 */
+	public Random getRand() {
+		return rand;
+	}
+
+	/**
+	 * @param rand the rand to set
+	 */
+	public void setRand(Random rand) {
+		this.rand = rand;
+	}
+	
 	
 	
 	

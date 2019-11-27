@@ -8,6 +8,7 @@ import view.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import model.Ennemi;
 import model.Jeu;
 
 /**
@@ -31,12 +32,19 @@ public class TimerListener implements ActionListener {
 	public TimerListener(Jeu g , View v) {
 		this.g = g;
 		this.v = v;
+		crash=false;
+		victoire= false;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		g.moveInvaders();
 		v.refresh();
+		if (g.checkPlayerCrash()) g.getVaisseau().setEnVie(false);;
+		for (Ennemi i : g.checkInvaderCrash()) i.setEnVie(false);
+		g.tireEnnemi();
+		v.refresh();
+	//}
 	}
 	
 	

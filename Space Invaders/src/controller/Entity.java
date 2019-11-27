@@ -58,12 +58,7 @@ public abstract class Entity {
 	}
 
 
-	/**
-	 * @param enVie the enVie to set
-	 */
-	public void setenVie(boolean enVie) {
-		this.setEnVie(enVie);
-	}
+	
 	
 	public abstract void nextTurn();
 

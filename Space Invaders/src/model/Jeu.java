@@ -57,8 +57,8 @@ public class Jeu {
 			if ((b.getY()>a.getY()+a.getHauteur()) || (b.getY()+b.getHauteur() < a.getY())) {
 				return false;
 			} else {
-				System.out.println("\n crash : "+a.getClass().getName()+" "+b.getClass().getName());
-				System.out.println("A("+a.getX()+","+a.getY()+"), B("+b.getX()+","+b.getY()+")");
+				System.out.println("\nUn "+b.getClass().getName() +" a touché "+a.getClass().getName());
+				System.out.println("les positions du choc sont:\n("+a.getX()+","+a.getY()+"), B("+b.getX()+","+b.getY()+")");
 				System.out.println("----------------------------------------------------------");
 				return true;
 			}

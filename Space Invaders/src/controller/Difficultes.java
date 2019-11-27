@@ -11,8 +11,7 @@ public class Difficultes {
 	
 	boolean choixNormal = false;
 	boolean choixDifficle = false;
-	public boolean vitesseNormal =false;
-	int test;
+	boolean vitesseNormal =false;
 	boolean vitesseDifficile = false;
 	public int pourcentageTirEnnemi=3;
 	

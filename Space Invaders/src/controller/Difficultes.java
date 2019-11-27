@@ -19,20 +19,22 @@ public class Difficultes {
 public Difficultes() {
 	
 
-	if(choixNormal==true) {
+	switch(pourcentageTirEnnemi) {
+	case 1:
 		vitesseNormal =true;
 		pourcentageTirEnnemi=5;
-	}
-
-	else if(choixDifficle==true) {
+	break;
+	
+	case 2:
 		vitesseDifficile=true;
 		pourcentageTirEnnemi=7;
-	}
-	else {
+	break;
+	
+	default: 
+		System.out.println("Veuillez choisir une difficulté");
 		
-	}
-}
+						}
 	
-	
+			}
 
 }

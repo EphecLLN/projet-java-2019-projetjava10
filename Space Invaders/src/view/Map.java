@@ -20,6 +20,7 @@ public class Map {
 	
 	
 	public final static int MOVE_INVADER_X=10;
+	
 	public final static int MOVE_INVADER_Y=30;
 	public final static int MOVE_INVADER_MOYEN_Y=90;
 	public final static int MOVE_INVADER_DIFFICILE_Y=150;

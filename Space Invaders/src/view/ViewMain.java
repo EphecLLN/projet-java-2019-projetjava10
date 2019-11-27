@@ -87,6 +87,8 @@ public class ViewMain extends JFrame implements ActionListener {
 		gbc_btnExit.gridx = 0;
 		gbc_btnExit.gridy = 15;
 		btnExit.addActionListener(this);
+		
+		// Expression lambda utilisée depuis Java 8 (comme for i: etc)
 		btnExit.addActionListener(e -> System.exit(0));
 		
 		

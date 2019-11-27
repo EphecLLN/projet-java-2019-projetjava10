@@ -15,10 +15,15 @@ public class Jeu {
 	/**
 	 * On cree le Vaisseau
 	 */
+<<<<<<< HEAD
 	private List<Ennemi> ennemis;
 	private List<Missile> missiles;
 	protected Vaisseau vaisseau;
 	private Random rand;
+=======
+	private List<Ennemi> ennemi;
+	protected Vaisseau vaisseau; 
+>>>>>>> 1fc2945f942396c06508082eaa55d54a87e574cc
 	
 	public Jeu() {
 		ennemis = new ArrayList<Ennemi>();

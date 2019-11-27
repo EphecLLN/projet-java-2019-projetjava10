@@ -14,7 +14,7 @@ import controller.Entity;
 public class Missile extends Entity {
 	
 	
-	private boolean player;
+	public boolean player;
 	
 	public Missile(int x, int y, boolean player) {
 		this.x=x;

@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import view.View;
 import model.Jeu;
 import view.Map;
+import controller.Missile;
 
 /**
  * @author gauthierbohyn

@@ -99,6 +99,11 @@ public class View {
 			if (!labelInvaders.containsKey(i)) createInvaderLabel(i);
  		}
 	}
+	private void createMissileLabels() {
+		for (Missile m : g.getMissiles()) {
+			if (!labelMissiles.containsKey(m)) createMissileLabel(m);
+ 		}
+	}
 	
 	private void refreshLabelEntity(JLabel l ,Entity e) {
 		l.setBounds(e.getX(), e.getY(), e.getLargeur(), e.getHauteur());
@@ -106,6 +111,7 @@ public class View {
 	
 	public void refresh() {
 		createInvaderLabels();
+		createMissileLabels();
 		
 		//Invaders
 		Enumeration<Ennemi> ei = labelInvaders.keys();
@@ -120,6 +126,8 @@ public class View {
 		}
 		
 	}
+	
+
 	
 
 	public JLabel getLabelShip() {

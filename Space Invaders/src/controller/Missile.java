@@ -14,7 +14,6 @@ public class Missile extends Entity {
 	
 	private boolean player;
 	
-	
 	public Missile(int x, int y, boolean player) {
 		this.x=x;
 		this.y=y;

@@ -1,6 +1,6 @@
 package view;
 import controller.Entity;
-import fr.bordeaux.poo.Missile;
+import controller.Missile;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -16,6 +16,7 @@ import javax.swing.border.EmptyBorder;
 
 import model.Jeu;
 import model.Ennemi;
+
 public class View {
 
 	Jeu g;
@@ -53,7 +54,7 @@ public class View {
 	
 	public void createMissileLabel(Missile m) {
 		JLabel missileLabel = new JLabel("I");
-		missileLabel.setBounds(m.getX() , m.getY() , m.getWidth() , m.getHeight());
+		missileLabel.setBounds(m.getX() , m.getY() , m.getLargeur() , m.getHauteur());
 		gamePanel.add(missileLabel);
 		labelMissiles.put(m, missileLabel);
 	}
@@ -115,7 +116,7 @@ public class View {
 		Enumeration<Missile> em = labelMissiles.keys();
 		while  (em.hasMoreElements()) {
 			Missile m = em.nextElement();
-			if (m.isAlive) refreshLabelEntity(labelMissiles.get(m), m);
+			if (m.isEnVie()) refreshLabelEntity(labelMissiles.get(m), m);
 		}
 		
 	}

@@ -3,7 +3,9 @@
  */
 package controller;
 
+
 import view.Map;
+import controller.Entity;
 
 /**
  * @author arnog

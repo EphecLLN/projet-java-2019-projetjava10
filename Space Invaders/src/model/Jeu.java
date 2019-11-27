@@ -12,6 +12,7 @@ import controller.Missile;
 import controller.Vaisseau;
 import controller.Ennemi;
 import controller.Entite;
+import controller.Difficultes;
 
 public class Jeu {
 	
@@ -19,6 +20,8 @@ public class Jeu {
 	private List<Ennemi> ennemis;
 	private Vaisseau vaisseau;
 	private Random rand;
+	Difficultes d = new Difficultes();
+	
 	
 	public Jeu() {
 		missiles = new ArrayList<Missile>();
@@ -100,7 +103,7 @@ public class Jeu {
 		for (Ennemi i : ennemis) {
 			if (i.enVie()) {
 			int dice = rand.nextInt(100) ;
-			if (dice <5) createMissile(i.getX()+(i.getLargeur()/2), i.getY(), false);
+			if (dice <d.pourcentageTirEnnemi) createMissile(i.getX()+(i.getLargeur()/2), i.getY(), false);
 			}
 		}
 	}

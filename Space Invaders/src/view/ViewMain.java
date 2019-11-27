@@ -10,6 +10,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
@@ -86,6 +87,8 @@ public class ViewMain extends JFrame implements ActionListener {
 		gbc_btnExit.gridx = 0;
 		gbc_btnExit.gridy = 15;
 		btnExit.addActionListener(this);
+		btnExit.addActionListener(e -> System.exit(0));
+		
 		
 		
 		

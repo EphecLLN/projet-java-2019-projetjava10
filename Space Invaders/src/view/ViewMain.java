@@ -30,7 +30,7 @@ public class ViewMain extends JFrame implements ActionListener {
 	 * Variable
 	 */
 	private JPanel contentPane;
-	private JLabel title,lblBohyn,lblGauthier,lblHermant,lblThibaut,lblMeryers,lblHumbert;
+	private JLabel title,lblBohyn,lblGauthier,lblGodart,lblArno,lblTongres,lblCyril;
 	private JButton btnSolo,btnSoloPc,btnMulti,BtnRules;
 	private JLabel lbDate;
 	private JButton btnExit;
@@ -173,37 +173,37 @@ public class ViewMain extends JFrame implements ActionListener {
 		gbc_lblGauthier.gridy = 12;
 		contentPane.add(lblGauthier, gbc_lblGauthier);
 		
-		lblHermant = new JLabel("GODART");
-		GridBagConstraints gbc_lblHermant = new GridBagConstraints();
-		gbc_lblHermant.anchor = GridBagConstraints.WEST;
-		gbc_lblHermant.insets = new Insets(0, 0, 5, 5);
-		gbc_lblHermant.gridx = 0;
-		gbc_lblHermant.gridy = 13;
-		contentPane.add(lblHermant, gbc_lblHermant);
+		lblGodart = new JLabel("GODART");
+		GridBagConstraints gbc_lblGodart = new GridBagConstraints();
+		gbc_lblGodart.anchor = GridBagConstraints.WEST;
+		gbc_lblGodart.insets = new Insets(0, 0, 5, 5);
+		gbc_lblGodart.gridx = 0;
+		gbc_lblGodart.gridy = 13;
+		contentPane.add(lblGodart, gbc_lblGodart);
 		
-		lblThibaut = new JLabel("Arno");
-		GridBagConstraints gbc_lblThibaut = new GridBagConstraints();
-		gbc_lblThibaut.anchor = GridBagConstraints.WEST;
-		gbc_lblThibaut.insets = new Insets(0, 0, 5, 5);
-		gbc_lblThibaut.gridx = 1;
-		gbc_lblThibaut.gridy = 13;
-		contentPane.add(lblThibaut, gbc_lblThibaut);
+		lblArno = new JLabel("Arno");
+		GridBagConstraints gbc_lblArno = new GridBagConstraints();
+		gbc_lblArno.anchor = GridBagConstraints.WEST;
+		gbc_lblArno.insets = new Insets(0, 0, 5, 5);
+		gbc_lblArno.gridx = 1;
+		gbc_lblArno.gridy = 13;
+		contentPane.add(lblGodart, gbc_lblArno);
 		
-		lblMeryers = new JLabel("TONGRES");
-		GridBagConstraints gbc_lblMeryers = new GridBagConstraints();
-		gbc_lblMeryers.anchor = GridBagConstraints.WEST;
-		gbc_lblMeryers.insets = new Insets(0, 0, 5, 5);
-		gbc_lblMeryers.gridx = 0;
-		gbc_lblMeryers.gridy = 14;
-		contentPane.add(lblMeryers, gbc_lblMeryers);
+		lblTongres = new JLabel("TONGRES");
+		GridBagConstraints gbc_lblTongres = new GridBagConstraints();
+		gbc_lblTongres.anchor = GridBagConstraints.WEST;
+		gbc_lblTongres.insets = new Insets(0, 0, 5, 5);
+		gbc_lblTongres.gridx = 0;
+		gbc_lblTongres.gridy = 14;
+		contentPane.add(lblTongres, gbc_lblTongres);
 		
-		lblHumbert = new JLabel("Cyril");
-		GridBagConstraints gbc_lblHumbert = new GridBagConstraints();
-		gbc_lblHumbert.anchor = GridBagConstraints.WEST;
-		gbc_lblHumbert.insets = new Insets(0, 0, 5, 5);
-		gbc_lblHumbert.gridx = 1;
-		gbc_lblHumbert.gridy = 14;
-		contentPane.add(lblHumbert, gbc_lblHumbert);
+		lblCyril = new JLabel("Cyril");
+		GridBagConstraints gbc_lblCyril = new GridBagConstraints();
+		gbc_lblCyril.anchor = GridBagConstraints.WEST;
+		gbc_lblCyril.insets = new Insets(0, 0, 5, 5);
+		gbc_lblCyril.gridx = 1;
+		gbc_lblCyril.gridy = 14;
+		contentPane.add(lblCyril, gbc_lblCyril);
 		contentPane.add(btnExit, gbc_btnExit);
 		
 		lbDate = new JLabel("Janvier 2020");

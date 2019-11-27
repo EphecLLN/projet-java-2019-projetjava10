@@ -38,11 +38,11 @@ public class TimerListener implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		g.moveInvaders();
+		g.moveEnnemis();
 		v.refresh();
-		if (g.checkPlayerCrash()) g.getVaisseau().setEnVie(false);;
-		for (Ennemi i : g.checkInvaderCrash()) i.setEnVie(false);
-		g.tireEnnemi();
+		if (g.checkJoueurCrash()) g.getVaisseau().setEnVie(false);;
+		for (Ennemi i : g.checkEnnemiCrash()) i.setEnVie(false);
+		g.tirEnnemis();
 		v.refresh();
 	//}
 	}

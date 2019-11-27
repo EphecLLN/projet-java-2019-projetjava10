@@ -18,8 +18,7 @@ import java.awt.Font;
 
 /**
  * @author BOHYN Gauthier
- * @author HERMANT Thibaut
- * @author MEYERS Humbert
+ * 
  * La vue du menu en GUI
  */
 

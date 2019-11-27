@@ -8,6 +8,7 @@ import view.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import fr.bordeaux.poo.Invader;
 import model.Jeu;
 
 /**
@@ -31,12 +32,19 @@ public class TimerListener implements ActionListener {
 	public TimerListener(Jeu g , View v) {
 		this.g = g;
 		this.v = v;
+		crash=false;
+		victoire= false;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		g.moveInvaders();
 		v.refresh();
+		if (g.checkPlayerCrash()) g.getShip().setAlive(false);;
+		for (Invader i : g.checkInvaderCrash()) i.setAlive(false);
+		g.fireInvaders();
+		v.refresh();
+	//}
 	}
 	
 	

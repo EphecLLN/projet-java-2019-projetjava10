@@ -1,5 +1,7 @@
 package view;
 import controller.Entity;
+import fr.bordeaux.poo.Missile;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -29,12 +31,13 @@ public class View {
 	
 	Hashtable<Ennemi , JLabel> labelInvaders;
 	JLabel labelVaisseau;
-	
+	Hashtable<Missile, JLabel> labelMissiles;
 	
 	
 	public View(Jeu g) {
 		this.g = g;
 		this.labelInvaders = new Hashtable<Ennemi, JLabel>();
+		this.labelMissiles = new Hashtable<Missile, JLabel>();
 	}
 	
 	public JFrame getFrame() {
@@ -46,6 +49,13 @@ public class View {
 		invaderLabel.setBounds(i.getX() , i.getY() , i.getLargeur() , i.getHauteur());
 		gamePanel.add(invaderLabel);
 		labelInvaders.put(i, invaderLabel);
+	}
+	
+	public void createMissileLabel(Missile m) {
+		JLabel missileLabel = new JLabel("I");
+		missileLabel.setBounds(m.getX() , m.getY() , m.getWidth() , m.getHeight());
+		gamePanel.add(missileLabel);
+		labelMissiles.put(m, missileLabel);
 	}
 	public void init() {
 		//Frame
@@ -101,6 +111,11 @@ public class View {
 		while  (ei.hasMoreElements()) {
 			Ennemi i = ei.nextElement();
 			if (i.isEnVie()) refreshLabelEntity(labelInvaders.get(i), i);
+		}
+		Enumeration<Missile> em = labelMissiles.keys();
+		while  (em.hasMoreElements()) {
+			Missile m = em.nextElement();
+			if (m.isAlive) refreshLabelEntity(labelMissiles.get(m), m);
 		}
 		
 	}

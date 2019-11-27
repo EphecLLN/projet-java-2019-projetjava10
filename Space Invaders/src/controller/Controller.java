@@ -51,15 +51,20 @@ public class Controller implements KeyListener{
 		vaisseauLabel.setBounds((int)x, (int) y, (int)width, (int)height);
 	}
 	
+	private void fire() {
+		v.createMissileLabel(j.createMissile((int)vaisseauLabel.getBounds().getX()+(Map.VAISSEAU_WIDTH/2), Map.VAISSEAU_START_Y, true));
+		
+	}
 	
 	/**
-	 * Fonction permettant de réaliser une action quand on APPUYE sur une touche du clavier
+	 * Fonction permettant de rï¿½aliser une action quand on APPUYE sur une touche du clavier
 	 */
 	@Override
 	public void keyPressed(KeyEvent kev) {
 		switch (kev.getKeyCode()) {
 			case KeyEvent.VK_LEFT: bougerGauche();break;
 			case KeyEvent.VK_RIGHT: bougerDroite();break;
+			case KeyEvent.VK_SPACE: fire();
 		}
 	}
 

@@ -37,5 +37,9 @@ public class Map {
 	public final static int ENNEMI_HEIGHT=36;
 	public final static int ENNEMI_WIDTH=55;
 	public final static int ENNEMI_START_Y=50;
+	
+	//missile
+	public final static int MISSILE_HEIGHT=5;
+	public final static int MISSILE_WIDTH=5;
 
 }

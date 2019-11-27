@@ -70,7 +70,7 @@ public class ViewMain extends JFrame implements ActionListener {
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 		contentPane.setLayout(gbl_contentPane);
 		
-		title = new JLabel("Space Invarders");
+		title = new JLabel("Space Invaders");
 		title.setHorizontalAlignment(SwingConstants.LEFT);
 		title.setFont(new Font("Lucida Grande", Font.PLAIN, 37));
 		GridBagConstraints gbc_title = new GridBagConstraints();

@@ -187,7 +187,7 @@ public class ViewMain extends JFrame implements ActionListener {
 		gbc_lblArno.insets = new Insets(0, 0, 5, 5);
 		gbc_lblArno.gridx = 1;
 		gbc_lblArno.gridy = 13;
-		contentPane.add(lblGodart, gbc_lblArno);
+		contentPane.add(lblArno, gbc_lblArno);
 		
 		lblTongres = new JLabel("TONGRES");
 		GridBagConstraints gbc_lblTongres = new GridBagConstraints();

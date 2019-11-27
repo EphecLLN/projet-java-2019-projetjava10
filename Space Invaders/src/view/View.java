@@ -1,10 +1,7 @@
 package view;
-import controller.Entity;
-import controller.Missile;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
@@ -12,32 +9,31 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
+import controller.Ennemi;
+import controller.Missile;
 import model.Jeu;
-import model.Ennemi;
+import controller.Entite;
 
 public class View {
-
-	Jeu g;
-	//Img img = new Img();
 	
+	Jeu g;
 	
 	JFrame frame;
 	
 	Dimension dim;
-	ImageIcon iconInvader, iconShip;
+	ImageIcon iconEnnemi, iconVaisseau;
 	
 	JPanel gamePanel;
 	
-	Hashtable<Ennemi , JLabel> labelInvaders;
+	Hashtable<Ennemi , JLabel> labelEnnemi;
 	JLabel labelVaisseau;
 	Hashtable<Missile, JLabel> labelMissiles;
 	
 	
 	public View(Jeu g) {
 		this.g = g;
-		this.labelInvaders = new Hashtable<Ennemi, JLabel>();
+		this.labelEnnemi = new Hashtable<Ennemi, JLabel>();
 		this.labelMissiles = new Hashtable<Missile, JLabel>();
 	}
 	
@@ -45,11 +41,11 @@ public class View {
 		return frame;
 	}
 	
-	public void createInvaderLabel(Ennemi i) {
-		JLabel invaderLabel = new JLabel(iconInvader);
+	public void createEnnemiLabel(Ennemi i) {
+		JLabel invaderLabel = new JLabel(iconEnnemi);
 		invaderLabel.setBounds(i.getX() , i.getY() , i.getLargeur() , i.getHauteur());
 		gamePanel.add(invaderLabel);
-		labelInvaders.put(i, invaderLabel);
+		labelEnnemi.put(i, invaderLabel);
 	}
 	
 	public void createMissileLabel(Missile m) {
@@ -58,6 +54,7 @@ public class View {
 		gamePanel.add(missileLabel);
 		labelMissiles.put(m, missileLabel);
 	}
+
 	public void init() {
 		//Frame
 		frame = new JFrame("Space Invader");
@@ -72,63 +69,63 @@ public class View {
 		frame.getContentPane().add(gamePanel, BorderLayout.CENTER);
 		gamePanel.setLayout(null);
 		
-	
-
 		//Icons
-		//iconShip = new ImageIcon(this.getClass().getResource(img.iconInvader));
-		iconShip = new ImageIcon(this.getClass().getResource("ship.png"));
-		iconInvader = new ImageIcon(this.getClass().getResource("invader.gif"));
+		iconEnnemi = new ImageIcon(this.getClass().getResource("invader.gif"));
+		iconVaisseau = new ImageIcon(this.getClass().getResource("ship.gif"));
 				
 		//The ship
-		labelVaisseau = new JLabel(iconShip);
-		labelVaisseau.setBounds(g.getVaisseau().getX(), g.getVaisseau().getY(), Map.VAISSEAU_WIDTH, Map.VAISSEAU_HEIGHT);
+		labelVaisseau = new JLabel(iconVaisseau);
+		labelVaisseau.setBounds(g.getVaisseau().getX(), g.getVaisseau().getY(), Map.SHIP_WIDTH, Map.SHIP_HEIGHT);
+		//labelVaisseau.setBounds(250, 400, Map.SHIP_WIDTH, Map.SHIP_HEIGHT);
 		gamePanel.add(labelVaisseau);
 		
-		//The Invaders
-				for (Ennemi i: g.getEnnemi()) createInvaderLabel(i);
-				frame.setSize(dim);
-				frame.setMinimumSize(dim);
-				frame.setMaximumSize(dim);
-				frame.pack();
-				frame.setVisible(true);
-			}
 		
-	
-	private void createInvaderLabels() {
-		for (Ennemi i : g.getEnnemi()) {
-			if (!labelInvaders.containsKey(i)) createInvaderLabel(i);
- 		}
+		//The Invaders
+		for (Ennemi i: g.getEnnemi()) createEnnemiLabel(i);
+		
+		
+		frame.setSize(dim);
+		frame.setMinimumSize(dim);
+		frame.setMaximumSize(dim);
+		frame.pack();
+		frame.setVisible(true);
 	}
+	
 	private void createMissileLabels() {
 		for (Missile m : g.getMissiles()) {
 			if (!labelMissiles.containsKey(m)) createMissileLabel(m);
  		}
 	}
 	
-	private void refreshLabelEntity(JLabel l ,Entity e) {
+	private void createEnnemiLabels() {
+		for (Ennemi i : g.getEnnemi()) {
+			if (!labelEnnemi.containsKey(i)) createEnnemiLabel(i);
+ 		}
+	}
+	
+	private void refreshLabelEntity(JLabel l ,Entite e) {
 		l.setBounds(e.getX(), e.getY(), e.getLargeur(), e.getHauteur());
 	}
 	
 	public void refresh() {
-		createInvaderLabels();
+		//refreshLabelEntity(labelVaisseau, g.getVaisseau());
 		createMissileLabels();
+		createEnnemiLabels();
 		
 		//Invaders
-		Enumeration<Ennemi> ei = labelInvaders.keys();
+		Enumeration<Ennemi> ei = labelEnnemi.keys();
 		while  (ei.hasMoreElements()) {
 			Ennemi i = ei.nextElement();
-			if (i.isEnVie()) refreshLabelEntity(labelInvaders.get(i), i);
+			if (i.enVie) refreshLabelEntity(labelEnnemi.get(i), i);
 		}
+		
 		Enumeration<Missile> em = labelMissiles.keys();
 		while  (em.hasMoreElements()) {
 			Missile m = em.nextElement();
-			if (m.isEnVie()) refreshLabelEntity(labelMissiles.get(m), m);
-		}
-		
+			if (m.enVie) refreshLabelEntity(labelMissiles.get(m), m);
+		}	
 	}
-	
 
-	
 
 	public JLabel getLabelShip() {
 		return labelVaisseau;

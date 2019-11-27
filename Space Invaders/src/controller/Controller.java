@@ -1,6 +1,3 @@
-/**
- * 
- */
 package controller;
 
 
@@ -8,64 +5,53 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
-
-
-import view.View;
 import model.Jeu;
+import view.View;
 import view.Map;
-import controller.Missile;
 
-/**
- * @author gauthierbohyn
- *
- */
 public class Controller implements KeyListener{
 	private JLabel vaisseauLabel;
-	private Jeu j;
+	private Jeu g;
 	private View v;
 	
-	public Controller(View v , Jeu j) {
-		this.j = j;
+	public Controller(View v , Jeu g) {
+		this.g = g;
 		this.v = v;
 		this.vaisseauLabel = v.getLabelShip();
 	}
 	
-	
-	private void bougerGauche() {
-		double x = vaisseauLabel.getBounds().getX()-Map.MOVE_VAISSEAU;
+	private void bougerDroite() {
+		double x = vaisseauLabel.getBounds().getX()+Map.MOVE_SHIP;
 		double y = vaisseauLabel.getBounds().getY();
 		double largeur = vaisseauLabel.getBounds().getWidth();
 		double hauteur = vaisseauLabel.getBounds().getHeight();
-		j.getVaisseau().setX((int)x);
-		j.getVaisseau().setY((int)y);
+		g.getVaisseau().setX((int)x);
+		g.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
 	}
 	
-	
-	private void bougerDroite() {
-		double x = vaisseauLabel.getBounds().getX()+Map.MOVE_VAISSEAU;
+	private void bougerGauche() {
+		double x = vaisseauLabel.getBounds().getX()-Map.MOVE_SHIP;
 		double y = vaisseauLabel.getBounds().getY();
-		double width = vaisseauLabel.getBounds().getWidth();
-		double height = vaisseauLabel.getBounds().getHeight();
-		j.getVaisseau().setX((int)x);
-		j.getVaisseau().setY((int)y);
-		vaisseauLabel.setBounds((int)x, (int) y, (int)width, (int)height);
+		double largeur = vaisseauLabel.getBounds().getWidth();
+		double hauteur = vaisseauLabel.getBounds().getHeight();
+		g.getVaisseau().setX((int)x);
+		g.getVaisseau().setY((int)y);
+		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
 	}
 	
-	private void fire() {
-		v.createMissileLabel(j.createMissile((int)vaisseauLabel.getBounds().getX()+(Map.VAISSEAU_WIDTH/2), Map.VAISSEAU_START_Y, true));
+	private void tir() {
+		v.createMissileLabel(g.createMissile((int)vaisseauLabel.getBounds().getX()+(Map.SHIP_WIDTH/2), Map.SHIP_START_Y, true));
 		
 	}
+
 	
-	/**
-	 * Fonction permettant de r�aliser une action quand on APPUYE sur une touche du clavier
-	 */
 	@Override
 	public void keyPressed(KeyEvent kev) {
 		switch (kev.getKeyCode()) {
 			case KeyEvent.VK_LEFT: bougerGauche();break;
 			case KeyEvent.VK_RIGHT: bougerDroite();break;
-			case KeyEvent.VK_SPACE: fire();
+			case KeyEvent.VK_SPACE: tir();
 		}
 	}
 

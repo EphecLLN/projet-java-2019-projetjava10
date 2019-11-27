@@ -1,36 +1,29 @@
-/**
- * 
- */
 package model;
 
 import java.util.ArrayList;
 
-import java.util.List;
-import java.util.Random;
+
+import model.Jeu;
 
 import view.Map;
+import java.util.List;
+import java.util.Random;
 import controller.Missile;
-import model.Vaisseau;
-import controller.Entity;
+import controller.Vaisseau;
+import controller.Ennemi;
+import controller.Entite;
 
-/**
- * @author gauthierbohyn
- * Classe representant le jeu
- */
 public class Jeu {
-
-	/**
-	 * On cree le Vaisseau
-	 */
-	private List<Ennemi> ennemis;
+	
 	private List<Missile> missiles;
-	protected Vaisseau vaisseau;
+	private List<Ennemi> ennemis;
+	private Vaisseau vaisseau;
 	private Random rand;
 	
 	public Jeu() {
-		ennemis = new ArrayList<Ennemi>();
 		missiles = new ArrayList<Missile>();
-		rand = new Random();
+		ennemis = new ArrayList<Ennemi>();
+		rand= new Random();
 	}
 	
 	void createEnnemi(int x, int y, boolean dir) {
@@ -47,17 +40,17 @@ public class Jeu {
 		
 	}
 	
-	public void initialiser() {
-		
-		vaisseau = new Vaisseau(Map.VAISSEAU_START_X, Map.VAISSEAU_START_Y);
-		createEnnemi(100,Map.ENNEMI_START_Y,true);
-		createEnnemi(0,Map.ENNEMI_START_Y,true);
-		createEnnemi(-100,Map.ENNEMI_START_Y,true);
-		createEnnemi(-200,Map.ENNEMI_START_Y,true);
-		createEnnemi(-300,Map.ENNEMI_START_Y,true);
+	public void init() {
+		vaisseau = new Vaisseau(Map.SHIP_START_X , Map.SHIP_START_Y);
+		createEnnemi(100,Map.INVADER_START_Y,true);
+		createEnnemi(0,Map.INVADER_START_Y,true);
+		createEnnemi(-100,Map.INVADER_START_Y,true);
+		createEnnemi(-200,Map.INVADER_START_Y,true);
+		createEnnemi(-300,Map.INVADER_START_Y,true);
 	}
+
 	
-	private boolean checkCrash(Entity a , Entity b) {
+	private boolean checkCrash(Entite a , Entite b) {
 		if ((b.getX() > a.getX()+a.getLargeur()) || (b.getX()+b.getLargeur() < a.getX())) {
 			return false;
 		} else {
@@ -73,7 +66,7 @@ public class Jeu {
 	
 	public boolean checkJoueurCrash() {
 		for (Missile m : missiles) {
-			if (!m.player && checkCrash(vaisseau, m)) return true;
+			if (!m.joueur && checkCrash(vaisseau, m)) return true;
 		}
 		for (Ennemi i : ennemis) {
 			if (checkCrash(vaisseau, i)) return true;
@@ -85,7 +78,7 @@ public class Jeu {
 	public List<Ennemi> checkEnnemiCrash() {
 		List<Ennemi> crashed = new ArrayList<Ennemi>();
 		for (Missile m : missiles) {
-			if (m.player) {
+			if (m.joueur) {
 				for (Ennemi i : ennemis) {
 					if (checkCrash(i, m)) crashed.add(i);
 				}
@@ -94,7 +87,7 @@ public class Jeu {
 		return crashed;
 	}
 	
-	public void moveEnnemis() {
+	public void moveEnnemi() {
 		for (Ennemi i : ennemis) i.nextTurn();
 	}
 	
@@ -102,89 +95,26 @@ public class Jeu {
 		for (Missile m : missiles) m.nextTurn();
 	}
 	
-	public void tirEnnemis() {
+	public void tirEnnemi() {
 		for (Ennemi i : ennemis) {
-			if (i.isEnVie()) {
+			if (i.enVie()) {
 			int dice = rand.nextInt(100) ;
 			if (dice <5) createMissile(i.getX()+(i.getLargeur()/2), i.getY(), false);
 			}
 		}
 	}
-	
-	/**
-	 * @return the vaisseau
-	 */
-	public Vaisseau getVaisseau() {
-		return vaisseau;
-	}
 
-	/**
-	 * @param vaisseau the vaisseau to set
-	 */
-	public void setVaisseau(Vaisseau vaisseau) {
-		this.vaisseau = vaisseau;
-	}
-
-	/**
-	 * @return the ennemis
-	 */
-	public List<Ennemi> getEnnemi() {
-		return ennemis;
-	}
-
-	/**
-	 * @param ennemi the ennemi to set
-	 */
-	public void setEnnemi(List<Ennemi> ennemi) {
-		this.ennemis = ennemi;
-	}
-
-	/**
-	 * @return the ennemis
-	 */
-	public List<Ennemi> getEnnemis() {
-		return ennemis;
-	}
-
-	/**
-	 * @param ennemis the ennemis to set
-	 */
-	public void setEnnemis(List<Ennemi> ennemis) {
-		this.ennemis = ennemis;
-	}
-
-	/**
-	 * @return the missiles
-	 */
 	public List<Missile> getMissiles() {
 		return missiles;
 	}
 
-	/**
-	 * @param missiles the missiles to set
-	 */
-	public void setMissiles(List<Missile> missiles) {
-		this.missiles = missiles;
+	public List<Ennemi> getEnnemi() {
+		return ennemis;
 	}
 
-	/**
-	 * @return the rand
-	 */
-	public Random getRand() {
-		return rand;
+	public Vaisseau getVaisseau() {
+		return vaisseau;
 	}
-
-	/**
-	 * @param rand the rand to set
-	 */
-	public void setRand(Random rand) {
-		this.rand = rand;
-	}
-	
-	
-	
-	
-	
 	
 
 }

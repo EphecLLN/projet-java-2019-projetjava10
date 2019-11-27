@@ -20,7 +20,7 @@ public class TimerListener implements ActionListener {
 	private boolean crash;
 	private boolean victoire;
 	
-	Jeu g;
+	Jeu j;
 	View v;
 	
 	
@@ -29,8 +29,8 @@ public class TimerListener implements ActionListener {
 	 * @param victoire
 	 */
 	
-	public TimerListener(Jeu g , View v) {
-		this.g = g;
+	public TimerListener(Jeu j , View v) {
+		this.j = j;
 		this.v = v;
 		crash=false;
 		victoire= false;
@@ -38,11 +38,11 @@ public class TimerListener implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		g.moveEnnemis();
+		j.moveEnnemis();
 		v.refresh();
-		if (g.checkJoueurCrash()) g.getVaisseau().setEnVie(false);;
-		for (Ennemi i : g.checkEnnemiCrash()) i.setEnVie(false);
-		g.tirEnnemis();
+		if (j.checkJoueurCrash()) j.getVaisseau().setEnVie(false);;
+		for (Ennemi i : j.checkEnnemiCrash()) i.setEnVie(false);
+		j.tirEnnemis();
 		v.refresh();
 	//}
 	}

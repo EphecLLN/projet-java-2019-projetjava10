@@ -30,6 +30,7 @@ public class Main {
 		
 		Timer t = new Timer(100 , new TimerListener(g, v));
 		t.start();
+		
 	}
 }
 

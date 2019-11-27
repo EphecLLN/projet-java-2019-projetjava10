@@ -21,11 +21,6 @@ public class Main {
 		Controller controller = new Controller(v , g);
 		v.getFrame().addKeyListener(controller);
 		v.getFrame().setFocusable(true);
-
-
-
-
-
 	}
 }
 

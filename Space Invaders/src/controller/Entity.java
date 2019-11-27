@@ -10,17 +10,17 @@ package controller;
 
 //test
 public abstract class Entity {
-
-	private int x;
-	private int y;
 	
-	public int hauteur;
-	public int largeur;
+	protected int x;
+	  protected int y;
 	
-	public boolean enVie = true;
+	  protected int hauteur;
+	  protected  int largeur;
+	
+	 protected boolean enVie = true;
 	
 	public boolean enVie() {
-		return enVie;
+		return isEnVie();
 	}
 
 	/**
@@ -62,9 +62,17 @@ public abstract class Entity {
 	 * @param enVie the enVie to set
 	 */
 	public void setenVie(boolean enVie) {
-		this.enVie = enVie;
+		this.setEnVie(enVie);
 	}
 	
 	public abstract void nextTurn();
+
+	public boolean isEnVie() {
+		return enVie;
+	}
+
+	public void setEnVie(boolean enVie) {
+		this.enVie = enVie;
+	}
 	
 }

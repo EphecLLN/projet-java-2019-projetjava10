@@ -3,26 +3,42 @@
  */
 package controller;
 
+import view.View;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import model.Jeu;
+
 /**
  * @author gauthierbohyn
  *
  */
-public class Timer {
+public class Timer implements ActionListener {
 
 	private boolean crash;
 	private boolean victoire;
 	
-	
+	Jeu g;
+	View v;
 	
 	
 	/**
 	 * @param crash
 	 * @param victoire
 	 */
-	public Timer(boolean crash, boolean victoire) {
+	public Timer(boolean crash, boolean victoire,Jeu g , View v) {
 		super();
 		this.crash = crash;
 		this.victoire = victoire;
+		this.g = g;
+		this.v = v;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		g.moveInvaders();
+		v.refresh();
 	}
 	/**
 	 * @return the crash

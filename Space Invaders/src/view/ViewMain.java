@@ -129,7 +129,7 @@ public class ViewMain extends JFrame implements ActionListener {
 		
 		
 		
-		btnMulti = new JButton("Difficle");
+		btnMulti = new JButton("Difficile");
 		btnMulti.setHorizontalAlignment(SwingConstants.LEFT);
 		btnMulti.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
 		GridBagConstraints gbc_btnMulti = new GridBagConstraints();

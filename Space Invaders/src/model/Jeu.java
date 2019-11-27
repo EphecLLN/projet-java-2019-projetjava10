@@ -18,8 +18,7 @@ public class Jeu {
 	 * On cree le Vaisseau
 	 */
 	private List<Ennemi> ennemi;
-
-	protected Vaisseau vaisseau;
+	protected Vaisseau vaisseau; 
 	
 	public Jeu() {
 		ennemi = new ArrayList<Ennemi>();

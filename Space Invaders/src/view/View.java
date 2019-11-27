@@ -29,7 +29,6 @@ public class View {
 	
 	Hashtable<Ennemi , JLabel> labelInvaders;
 	JLabel labelVaisseau;
-	coucou
 	
 	
 	

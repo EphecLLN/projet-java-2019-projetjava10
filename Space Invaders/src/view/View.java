@@ -22,13 +22,14 @@ public class View {
 	JFrame frame;
 	
 	Dimension dim;
-	ImageIcon iconEnnemi, iconVaisseau;
+	ImageIcon iconEnnemi, iconVaisseau, iconDefense;
 	
 	JPanel gamePanel;
 	
 	Hashtable<Ennemi , JLabel> labelEnnemi;
 	JLabel labelVaisseau;
 	Hashtable<Missile, JLabel> labelMissiles;
+	JLabel labelDefense;
 	
 	
 	public View(Jeu g) {
@@ -72,12 +73,16 @@ public class View {
 		//Icons
 		iconEnnemi = new ImageIcon(this.getClass().getResource("invader.gif"));
 		iconVaisseau = new ImageIcon(this.getClass().getResource("ship.gif"));
+		//iconDefense = new ImageIcon(this.getClass().getResource("invader.gif"));
 				
 		//The ship
 		labelVaisseau = new JLabel(iconVaisseau);
 		labelVaisseau.setBounds(g.getVaisseau().getX(), g.getVaisseau().getY(), Map.SHIP_WIDTH, Map.SHIP_HEIGHT);
 		//labelVaisseau.setBounds(250, 400, Map.SHIP_WIDTH, Map.SHIP_HEIGHT);
 		gamePanel.add(labelVaisseau);
+		
+		//labelDefense = new JLabel(iconDefense);
+		//labelDefense.setBounds(0, 0, Map.DEFENSES_A_X, Map.DEFENSES_A_Y);
 		
 		
 		//The Invaders
@@ -116,6 +121,7 @@ public class View {
 		Enumeration<Ennemi> ei = labelEnnemi.keys();
 		while  (ei.hasMoreElements()) {
 			Ennemi i = ei.nextElement();
+			
 			if (i.enVie) refreshLabelEntity(labelEnnemi.get(i), i);
 		}
 		

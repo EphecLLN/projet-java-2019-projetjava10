@@ -1,10 +1,13 @@
   package view;
+
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
-
+import javax.swing.table.JTableHeader;
 
 import java.awt.GridBagLayout;
 import javax.swing.JButton;
@@ -35,6 +38,7 @@ public class ViewMain extends JFrame implements ActionListener {
 	private JButton btnSolo,btnSoloPc,btnMulti,BtnRules;
 	private JLabel lbDate;
 	private JButton btnExit;
+	private JTable tableauScore;
 	
 	/**
 	 * Launch the application.
@@ -87,10 +91,17 @@ public class ViewMain extends JFrame implements ActionListener {
 		gbc_btnExit.gridx = 0;
 		gbc_btnExit.gridy = 15;
 		btnExit.addActionListener(this);
-		
-		// Expression lambda utilisée depuis Java 8 (comme for i: etc)
 		btnExit.addActionListener(e -> System.exit(0));
 		
+		tableauScore = new JTable();
+		Object[][] donnees = {
+				{"Bohyn", "Gauthier", "Nul"},
+                {"Godart", "Arno", "Encore plus nul"},
+                {"Tongres", "Cyril", "Même pas demander"}};
+		String[] enTetes = {"Nom", "Prenom", "Score"};
+		tableauScore = new JTable(donnees, enTetes);
+		getContentPane().add(new JScrollPane(tableauScore));
+		pack();
 		
 		
 		

@@ -28,7 +28,7 @@ public class Controller implements KeyListener{
 		g.getVaisseau().setX((int)x);
 		g.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
-		System.out.format("Coordonées X :" + "" + vaisseauLabel.getBounds().getX() + "\n" + "Coordonées Y :" + "" + vaisseauLabel.getBounds().getY() + "\n");
+		System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" + "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() + "\n");
 		
 	}
 	
@@ -40,7 +40,7 @@ public class Controller implements KeyListener{
 		g.getVaisseau().setX((int)x);
 		g.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
-		System.out.format("Coordonées X :" + "" + vaisseauLabel.getBounds().getX() + "\n" + "Coordonées Y :" + "" + vaisseauLabel.getBounds().getY() + "\n");
+		System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" + "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() + "\n");
 		
 	}
 	

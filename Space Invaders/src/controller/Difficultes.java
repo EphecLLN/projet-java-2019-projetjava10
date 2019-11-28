@@ -29,9 +29,6 @@ public Difficultes() {
 		vitesseDifficile=true;
 		pourcentageTirEnnemi=7;
 	break;
-	
-	default: 
-		System.out.println("Veuillez choisir une difficulté");
 		
 						}
 	

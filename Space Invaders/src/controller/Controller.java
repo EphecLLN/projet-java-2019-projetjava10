@@ -28,6 +28,7 @@ public class Controller implements KeyListener{
 		g.getVaisseau().setX((int)x);
 		g.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
+		System.out.println(get);
 	}
 	
 	private void bougerGauche() {

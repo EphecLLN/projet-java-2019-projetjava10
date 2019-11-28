@@ -93,7 +93,12 @@ public class ViewMain extends JFrame implements ActionListener {
 		btnExit.addActionListener(this);
 		btnExit.addActionListener(e -> System.exit(0));
 		
-		tableauScore = new JTable();
+		
+		/*
+		 * Tableau des scores qu'il faudra adapter en temps réel
+		 *
+		 * tableauScore = new JTable();
+		 
 		Object[][] donnees = {
 				{"Bohyn", "Gauthier", "Nul"},
                 {"Godart", "Arno", "Encore plus nul"},
@@ -102,6 +107,7 @@ public class ViewMain extends JFrame implements ActionListener {
 		tableauScore = new JTable(donnees, enTetes);
 		getContentPane().add(new JScrollPane(tableauScore));
 		pack();
+		*/
 		
 		
 		

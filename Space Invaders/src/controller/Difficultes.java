@@ -16,22 +16,22 @@ public class Difficultes {
 	public int pourcentageTirEnnemi=3;
 	
 	
-public Difficultes() {
-	
-
-	switch(pourcentageTirEnnemi) {
-	case 1:
-		vitesseNormal =true;
-		pourcentageTirEnnemi=5;
-	break;
-	
-	case 2:
-		vitesseDifficile=true;
-		pourcentageTirEnnemi=7;
-	break;
+	public Difficultes() {
 		
-						}
-	
-			}
+
+		if(choixNormal==true) {
+			vitesseNormal =true;
+			pourcentageTirEnnemi=5;
+		}
+
+		else if(choixDifficle==true) {
+			vitesseDifficile=true;
+			pourcentageTirEnnemi=7;
+		}
+		else {
+			
+			
+		}
+	}
 
 }

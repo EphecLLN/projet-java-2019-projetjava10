@@ -55,7 +55,7 @@ public class Jeu {
 	}
 
 
-	}
+	
 
 	
 	private boolean checkCrash(Entite a , Entite b) {

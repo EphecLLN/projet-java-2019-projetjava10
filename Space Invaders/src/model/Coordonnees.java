@@ -1,6 +1,6 @@
-package view;
+package model;
 
-public class Map {
+public class Coordonnees {
 	
 	public final static int MAP_HEIGHT=800;
 	public final static int MAP_WIDTH=1000;

@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 
+import model.Ennemi;
 import model.Jeu;
 
 import java.awt.event.ActionListener;

@@ -6,8 +6,8 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
 import model.Jeu;
+import model.Coordonnees;
 import view.View;
-import view.Map;
 
 public class Controller implements KeyListener{
 	private JLabel vaisseauLabel;
@@ -21,7 +21,7 @@ public class Controller implements KeyListener{
 	}
 	
 	private void bougerDroite() {
-		double x = vaisseauLabel.getBounds().getX()+Map.MOVE_SHIP;
+		double x = vaisseauLabel.getBounds().getX()+Coordonnees.MOVE_SHIP;
 		double y = vaisseauLabel.getBounds().getY();
 		double largeur = vaisseauLabel.getBounds().getWidth();
 		double hauteur = vaisseauLabel.getBounds().getHeight();
@@ -33,7 +33,7 @@ public class Controller implements KeyListener{
 	}
 	
 	private void bougerGauche() {
-		double x = vaisseauLabel.getBounds().getX()-Map.MOVE_SHIP;
+		double x = vaisseauLabel.getBounds().getX()-Coordonnees.MOVE_SHIP;
 		double y = vaisseauLabel.getBounds().getY();
 		double largeur = vaisseauLabel.getBounds().getWidth();
 		double hauteur = vaisseauLabel.getBounds().getHeight();
@@ -45,7 +45,7 @@ public class Controller implements KeyListener{
 	}
 	
 	private void tir() {
-		v.createMissileLabel(g.createMissile((int)vaisseauLabel.getBounds().getX()+(Map.SHIP_WIDTH/2), Map.SHIP_START_Y, true));
+		v.createMissileLabel(g.createMissile((int)vaisseauLabel.getBounds().getX()+(Coordonnees.SHIP_WIDTH/2), Coordonnees.SHIP_START_Y, true));
 		
 	}
 

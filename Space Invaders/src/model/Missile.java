@@ -1,6 +1,6 @@
-package controller;
+package model;
 
-import view.Map;
+import controller.Entite;
 public class Missile extends Entite{
 	
 	public boolean joueur; //true means that it is a joueur shoot
@@ -9,14 +9,14 @@ public class Missile extends Entite{
 		this.x = x;
 		this.y = y;
 		this.joueur=joueur;
-		this.hauteur=Map.MISSILE_HEIGHT;
-		this.largeur=Map.MISSILE_WIDTH;
+		this.hauteur=Coordonnees.MISSILE_HEIGHT;
+		this.largeur=Coordonnees.MISSILE_WIDTH;
 	}
 
 	@Override
 	public void nextTurn() {
-		if (joueur) this.y-=Map.MOVE_MISSILE;
-		else this.y+=Map.MOVE_MISSILE;
+		if (joueur) this.y-=Coordonnees.MOVE_MISSILE;
+		else this.y+=Coordonnees.MOVE_MISSILE;
 		
 	}
 

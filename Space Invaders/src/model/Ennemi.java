@@ -1,6 +1,5 @@
-package controller;
-import view.Map;
-import controller.Difficultes;
+package model;
+import controller.Entite;
 public class Ennemi extends Entite{
 	
 	boolean direction;//true means from the left to the right
@@ -9,32 +8,32 @@ public class Ennemi extends Entite{
 	public Ennemi(int x, int y, boolean dir) {
 		this.x=x;
 		this.y=y;
-		this.largeur=Map.INVADER_WIDTH;
-		this.hauteur=Map.INVADER_HEIGHT;
+		this.largeur=Coordonnees.INVADER_WIDTH;
+		this.hauteur=Coordonnees.INVADER_HEIGHT;
 		this.direction=dir;
 	}
 
 	@Override
 	public void nextTurn() {
-		int x_max = x+2*largeur+Map.MOVE_INVADER_X;
-		int x_min = x-largeur-Map.MOVE_INVADER_X;
+		int x_max = x+2*largeur+Coordonnees.MOVE_INVADER_X;
+		int x_min = x-largeur-Coordonnees.MOVE_INVADER_X;
 		
 		if (enVie) {	
 			if (direction) {
 					
 					
-						if (x_max < Map.MAP_WIDTH) {
-							x+=Map.MOVE_INVADER_X; // pour faire aller vers la droite
+						if (x_max < Coordonnees.MAP_WIDTH) {
+							x+=Coordonnees.MOVE_INVADER_X; // pour faire aller vers la droite
 						} else {
 							if(d.vitesseDifficile==true) {
 								
-								y+= Map.MOVE_INVADER_DIFFICILE_Y;
+								y+= Coordonnees.MOVE_INVADER_DIFFICILE_Y;
 								
 							}	
 							else if(d.vitesseNormal = true){
-								y+=Map.MOVE_INVADER_MOYEN_Y;
+								y+=Coordonnees.MOVE_INVADER_MOYEN_Y;
 							}else {
-							y+=Map.MOVE_INVADER_Y; // pour faire descendre vers le bas
+							y+=Coordonnees.MOVE_INVADER_Y; // pour faire descendre vers le bas
 							}
 							direction=false;
 							
@@ -43,18 +42,18 @@ public class Ennemi extends Entite{
 				} else {
 					
 					if (x_min > 0) {
-						x-=Map.MOVE_INVADER_X;
+						x-=Coordonnees.MOVE_INVADER_X;
 					} else {
 						if(d.vitesseDifficile==true) {
 							
 							
-							y+= Map.MOVE_INVADER_DIFFICILE_Y;
+							y+= Coordonnees.MOVE_INVADER_DIFFICILE_Y;
 						}
 						else if(d.vitesseNormal = true){
-							y+=Map.MOVE_INVADER_MOYEN_Y;
+							y+=Coordonnees.MOVE_INVADER_MOYEN_Y;
 						}
 						else {
-							y+=Map.MOVE_INVADER_Y;
+							y+=Coordonnees.MOVE_INVADER_Y;
 						direction=true;
 					}
 						direction=true;}

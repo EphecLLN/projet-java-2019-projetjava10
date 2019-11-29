@@ -20,8 +20,6 @@ public class Main {
 		
 		Timer t = new Timer(100 , new TimerLecture(g, v));
 		t.start();
-
 	}
-
 }
 

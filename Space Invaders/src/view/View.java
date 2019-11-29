@@ -10,9 +10,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import controller.Ennemi;
-import controller.Missile;
+import model.Ennemi;
 import model.Jeu;
+import model.Coordonnees;
+import model.Missile;
 import controller.Entite;
 
 public class View {
@@ -62,7 +63,7 @@ public class View {
 		frame.getContentPane().setLayout(new BorderLayout());
 		
 		//Center Panel
-		dim = new Dimension(Map.MAP_WIDTH, Map.MAP_HEIGHT);
+		dim = new Dimension(Coordonnees.MAP_WIDTH, Coordonnees.MAP_HEIGHT);
 		gamePanel = new JPanel();
 		gamePanel.setMinimumSize(dim);
 		gamePanel.setMaximumSize(dim);
@@ -77,7 +78,7 @@ public class View {
 				
 		//The ship
 		labelVaisseau = new JLabel(iconVaisseau);
-		labelVaisseau.setBounds(g.getVaisseau().getX(), g.getVaisseau().getY(), Map.SHIP_WIDTH, Map.SHIP_HEIGHT);
+		labelVaisseau.setBounds(g.getVaisseau().getX(), g.getVaisseau().getY(), Coordonnees.SHIP_WIDTH, Coordonnees.SHIP_HEIGHT);
 		//labelVaisseau.setBounds(250, 400, Map.SHIP_WIDTH, Map.SHIP_HEIGHT);
 		gamePanel.add(labelVaisseau);
 		

@@ -5,20 +5,16 @@ import java.util.ArrayList;
 
 import model.Jeu;
 
-import view.Map;
 import java.util.List;
 import java.util.Random;
-import controller.Missile;
-import controller.Vaisseau;
-import controller.Ennemi;
+
 import controller.Entite;
-import controller.Difficultes;
 
 public class Jeu {
 	
 	private List<Missile> missiles;
 	private List<Ennemi> ennemis;
-	private Vaisseau vaisseau;
+	Vaisseau vaisseau;
 	private Random rand;
 	Difficultes d = new Difficultes();
 	
@@ -44,11 +40,11 @@ public class Jeu {
 	}
 
 	public void init() {
-	vaisseau = new Vaisseau(Map.SHIP_START_X , Map.SHIP_START_Y);
+	vaisseau = new Vaisseau(Coordonnees.SHIP_START_X , Coordonnees.SHIP_START_Y);
 
 	for(int i = 1; i <= Difficultes.nbrEnnemi; i++)
 	{
-		createEnnemi(Difficultes.positionStart,Map.INVADER_START_Y,true);
+		createEnnemi(Difficultes.positionStart,Coordonnees.INVADER_START_Y,true);
 		Difficultes.positionStart=Difficultes.positionStart-100;
 	}
 		

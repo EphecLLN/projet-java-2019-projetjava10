@@ -1,7 +1,7 @@
 /**
  * 
  */
-package controller;
+package model;
 
 /**
  * @author gauthierbohyn
@@ -9,10 +9,10 @@ package controller;
  */
 public class Difficultes {
 	
-	boolean choixNormal = false;
-	boolean choixDifficle = true;
-	boolean vitesseNormal =false;
-	boolean vitesseDifficile = false;
+	public boolean choixNormal = false;
+	public boolean choixDifficle = true;
+	public boolean vitesseNormal =false;
+	public boolean vitesseDifficile = false;
 	public int pourcentageTirEnnemi=2;
 	public static int positionStart=100;
 	public static int nbrEnnemi=6;

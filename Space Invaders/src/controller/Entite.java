@@ -1,11 +1,11 @@
 package controller;
 
 public abstract class Entite {
-	int x;
-	int y;
+	protected int x;
+	protected int y;
 	
-	int hauteur;
-	int largeur;
+	protected int hauteur;
+	protected int largeur;
 	
 	public boolean enVie=true;
 	

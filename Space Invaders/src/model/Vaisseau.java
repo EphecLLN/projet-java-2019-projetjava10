@@ -1,14 +1,14 @@
-package controller;
+package model;
 
-import view.Map;
+import controller.Entite;
 public class Vaisseau extends Entite {
 	
 	
 	public Vaisseau(int x , int y) {
 		this.x= x;
 		this.y= y;
-		this.largeur= Map.SHIP_WIDTH;
-		this.hauteur= Map.SHIP_HEIGHT;
+		this.largeur= Coordonnees.SHIP_WIDTH;
+		this.hauteur= Coordonnees.SHIP_HEIGHT;
 	}
 
 	@Override

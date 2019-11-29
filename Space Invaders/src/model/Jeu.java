@@ -50,6 +50,8 @@ public class Jeu {
 		createEnnemi(-100,Map.INVADER_START_Y,true);
 		createEnnemi(-200,Map.INVADER_START_Y,true);
 		createEnnemi(-300,Map.INVADER_START_Y,true);
+		createEnnemi(-400,Map.INVADER_START_Y,true);
+		
 	}
 
 	

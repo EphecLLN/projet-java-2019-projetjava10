@@ -3,7 +3,7 @@ package model;
 import controller.Entite;
 public class Missile extends Entite{
 	
-	public boolean joueur; //true means that it is a joueur shoot
+	public boolean joueur; //si true, c'est le joureur qui a tire
 	
 	public Missile(int x , int y, boolean joueur) {
 		this.x = x;
@@ -15,8 +15,9 @@ public class Missile extends Entite{
 
 	@Override
 	public void nextTurn() {
-		if (joueur) this.y-=Coordonnees.MOVE_MISSILE;
-		else this.y+=Coordonnees.MOVE_MISSILE;
+		if (joueur) this.y-=Coordonnees.MOVE_MISSILE; // si le joueur a tire, on diminue le y pour faire monter le missile
+													// car le y dans java va vers le bas
+		else this.y+=Coordonnees.MOVE_MISSILE;		//sinon  c'est que c'est l ennemi qui tire, donc on monte le y pour que le missile diminue
 		
 	}
 

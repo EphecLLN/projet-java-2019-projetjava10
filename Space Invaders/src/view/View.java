@@ -43,15 +43,15 @@ public class View {
 		return frame;
 	}
 	
-	public void createEnnemiLabel(Ennemi i) {
+	public void createEnnemiLabel(Ennemi i) {		//pour ajouter les ennemi dans le label
 		JLabel invaderLabel = new JLabel(iconEnnemi);
 		invaderLabel.setBounds(i.getX() , i.getY() , i.getLargeur() , i.getHauteur());
 		gamePanel.add(invaderLabel);
 		labelEnnemi.put(i, invaderLabel);
 	}
 	
-	public void createMissileLabel(Missile m) {
-		JLabel missileLabel = new JLabel("I");
+	public void createMissileLabel(Missile m) {		//pour ajouter les missiles dans le label
+		JLabel missileLabel = new JLabel("I");		//pour le missile
 		missileLabel.setBounds(m.getX() , m.getY() , m.getLargeur() , m.getHauteur());
 		gamePanel.add(missileLabel);
 		labelMissiles.put(m, missileLabel);
@@ -97,35 +97,35 @@ public class View {
 		frame.setVisible(true);
 	}
 	
-	private void createMissileLabels() {
+	private void createMissileLabels() {		//appel dans le timer
 		for (Missile m : g.getMissiles()) {
 			if (!labelMissiles.containsKey(m)) createMissileLabel(m);
  		}
 	}
 	
-	private void createEnnemiLabels() {
+	private void createEnnemiLabels() {			// appel dans le timer
 		for (Ennemi i : g.getEnnemi()) {
 			if (!labelEnnemi.containsKey(i)) createEnnemiLabel(i);
  		}
 	}
 	
-	private void refreshLabelEntity(JLabel l ,Entite e) {
+	private void refreshLabelEntity(JLabel l ,Entite e) {	// recupere les donnees pour les mettre à jour
 		l.setBounds(e.getX(), e.getY(), e.getLargeur(), e.getHauteur());
 	}
 	
-	public void refresh() {
-		//refreshLabelEntity(labelVaisseau, g.getVaisseau());
+	public void refresh() {	//methode appellee toutes les 100 millisecondes dans TimerLecture
+		
 		createMissileLabels();
 		createEnnemiLabels();
 		
-		//Invaders
+		//pour refresh les ennemi
 		Enumeration<Ennemi> ei = labelEnnemi.keys();
 		while  (ei.hasMoreElements()) {
 			Ennemi i = ei.nextElement();
 			
-			if (i.enVie) refreshLabelEntity(labelEnnemi.get(i), i);
+			if (i.enVie) refreshLabelEntity(labelEnnemi.get(i), i);	//appel les coordonnees
 		}
-		
+		// pour refresh les missiles
 		Enumeration<Missile> em = labelMissiles.keys();
 		while  (em.hasMoreElements()) {
 			Missile m = em.nextElement();

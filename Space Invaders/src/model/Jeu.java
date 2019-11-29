@@ -42,11 +42,10 @@ public class Jeu {
 	public void init() {
 	vaisseau = new Vaisseau(Coordonnees.SHIP_START_X , Coordonnees.SHIP_START_Y);
 
-	for(int i = 1; i <= Difficultes.nbrEnnemi; i++)
-	{
-		createEnnemi(Difficultes.positionStart,Coordonnees.INVADER_START_Y,true);
-		Difficultes.positionStart=Difficultes.positionStart-100;
-	}
+		for(int i = 1; i <= Difficultes.nbrEnnemi; i++){
+			createEnnemi(Difficultes.positionStart,Coordonnees.INVADER_START_Y,true);
+			Difficultes.positionStart=Difficultes.positionStart-100;
+		}
 		
 	}
 
@@ -54,7 +53,7 @@ public class Jeu {
 	
 
 	
-	private boolean checkCrash(Entite a , Entite b) {
+	private boolean checkCrash(Entite a , Entite b) {		// si recouvrement des deux entite donc si il se seperpose
 		if ((b.getX() > a.getX()+a.getLargeur()) || (b.getX()+b.getLargeur() < a.getX())) {
 			return false;
 		} else {
@@ -103,8 +102,8 @@ public class Jeu {
 	public void tirEnnemi() {
 		for (Ennemi i : ennemis) {
 			if (i.enVie()) {
-			int dice = rand.nextInt(100) ;
-			if (dice <d.pourcentageTirEnnemi) createMissile(i.getX()+(i.getLargeur()/2), i.getY(), false);
+			int dice = rand.nextInt(100) ;	//c est comme si il lancais un dés de 1 a 100
+			if (dice <d.pourcentageTirEnnemi) createMissile(i.getX()+(i.getLargeur()/2), i.getY(), false);	// si moins de pourcentageTirEnnemi, il tir!
 			}
 		}
 	}

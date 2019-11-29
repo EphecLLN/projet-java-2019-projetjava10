@@ -14,12 +14,12 @@ public class Main {
 		View v = new View(g);
 		v.init();
 		
-		Controller controller = new Controller(v , g);
+		Controller controller = new Controller(v , g);	//en lui passer la mue et le model jeu
 		v.getFrame().addKeyListener(controller);
-		v.getFrame().setFocusable(true);
+		v.getFrame().setFocusable(true);				// pour enregistrer notre clavier
 		
-		Timer t = new Timer(100 , new TimerLecture(g, v));
-		t.start();
+		Timer t = new Timer(100 , new TimerLecture(g, v)); // 100 car on refresh toutes les 100 millisecondes l'app
+		t.start();	//demare le timer
 	}
 }
 

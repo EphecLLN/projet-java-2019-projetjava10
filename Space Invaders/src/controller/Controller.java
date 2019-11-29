@@ -9,7 +9,7 @@ import model.Jeu;
 import model.Coordonnees;
 import view.View;
 
-public class Controller implements KeyListener{
+public class Controller implements KeyListener{ //KeyListener --> pour les touches du clavier
 	private JLabel vaisseauLabel;
 	private Jeu g;
 	private View v;
@@ -26,7 +26,6 @@ public class Controller implements KeyListener{
 		double largeur = vaisseauLabel.getBounds().getWidth();
 		double hauteur = vaisseauLabel.getBounds().getHeight();
 		g.getVaisseau().setX((int)x);
-		g.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
 		System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" +/* "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() +*/ "\n");
 		System.out.format("------------------------------------------------\n");
@@ -38,7 +37,6 @@ public class Controller implements KeyListener{
 		double largeur = vaisseauLabel.getBounds().getWidth();
 		double hauteur = vaisseauLabel.getBounds().getHeight();
 		g.getVaisseau().setX((int)x);
-		g.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
 		System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" +/* "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() +*/ "\n");
 		System.out.format("------------------------------------------------\n");
@@ -51,23 +49,28 @@ public class Controller implements KeyListener{
 
 	
 	@Override
-	public void keyPressed(KeyEvent kev) {
+	public void keyPressed(KeyEvent kev) {						// quand on clic sur une touche
 		switch (kev.getKeyCode()) {
-			case KeyEvent.VK_LEFT: bougerGauche();break;
-			case KeyEvent.VK_RIGHT: bougerDroite();break;
-			case KeyEvent.VK_SPACE: tir();
+			case KeyEvent.VK_LEFT: bougerGauche();break;		//la touche de gauche
+			case KeyEvent.VK_RIGHT: bougerDroite();break;		// la touche de droite
+			case KeyEvent.VK_SPACE: tir();						//touche espace pour tirer
 		}
 	}
 
+	
+	
+	//oblige de les laisser a cause du KeyListener
 	@Override
-	public void keyReleased(KeyEvent arg0) {
+	public void keyTyped(KeyEvent e) {			
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {
+	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 }

@@ -14,7 +14,8 @@ public class Difficultes {
 	boolean vitesseNormal =false;
 	boolean vitesseDifficile = false;
 	public int pourcentageTirEnnemi=3;
-	
+	public static int positionStart=100;
+	public static int nbrEnnemi=25;
 	
 	public Difficultes() {
 		

@@ -10,7 +10,7 @@ package controller;
 public class Difficultes {
 	
 	boolean choixNormal = false;
-	boolean choixDifficle = false;
+	boolean choixDifficle = true;
 	boolean vitesseNormal =false;
 	boolean vitesseDifficile = false;
 	public int pourcentageTirEnnemi=3;

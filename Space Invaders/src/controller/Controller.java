@@ -28,8 +28,8 @@ public class Controller implements KeyListener{
 		g.getVaisseau().setX((int)x);
 		g.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
-		System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" + "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() + "\n");
-		
+		System.out.format("CoordonnÃ©es X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" +/* "CoordonnÃ©es Y du joueur :" + "" + vaisseauLabel.getBounds().getY() +*/ "\n");
+		System.out.format("------------------------------------------------\n");
 	}
 	
 	private void bougerGauche() {
@@ -40,8 +40,8 @@ public class Controller implements KeyListener{
 		g.getVaisseau().setX((int)x);
 		g.getVaisseau().setY((int)y);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
-		System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" + "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() + "\n");
-		
+		System.out.format("CoordonnÃ©es X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" +/* "CoordonnÃ©es Y du joueur :" + "" + vaisseauLabel.getBounds().getY() +*/ "\n");
+		System.out.format("------------------------------------------------\n");
 	}
 	
 	private void tir() {

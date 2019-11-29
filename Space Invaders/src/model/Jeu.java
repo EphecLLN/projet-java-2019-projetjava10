@@ -42,16 +42,19 @@ public class Jeu {
 	public void nextTurn() {
 		
 	}
-	
+
 	public void init() {
-		vaisseau = new Vaisseau(Map.SHIP_START_X , Map.SHIP_START_Y);
-		createEnnemi(100,Map.INVADER_START_Y,true);
-		createEnnemi(0,Map.INVADER_START_Y,true);
-		createEnnemi(-100,Map.INVADER_START_Y,true);
-		createEnnemi(-200,Map.INVADER_START_Y,true);
-		createEnnemi(-300,Map.INVADER_START_Y,true);
-		createEnnemi(-400,Map.INVADER_START_Y,true);
+	vaisseau = new Vaisseau(Map.SHIP_START_X , Map.SHIP_START_Y);
+
+	for(int i = 1; i <= Difficultes.nbrEnnemi; i++)
+	{
+		createEnnemi(Difficultes.positionStart,Map.INVADER_START_Y,true);
+		Difficultes.positionStart=Difficultes.positionStart-100;
+	}
 		
+	}
+
+
 	}
 
 	
@@ -62,7 +65,7 @@ public class Jeu {
 			if ((b.getY()>a.getY()+a.getHauteur()) || (b.getY()+b.getHauteur() < a.getY())) {
 				return false;
 			} else {
-				System.out.println("Un : "+b.getClass().getName() +" a touché un : "+a.getClass().getName());
+				System.out.println("Un : "+b.getClass().getName() +" a touchÃ© un : "+a.getClass().getName());
 				System.out.println("les positions du choc sont:\n("+a.getX()+","+a.getY()+"), B("+b.getX()+","+b.getY()+")");
 				System.out.println("----------------------------------------------------------");
 				return true;

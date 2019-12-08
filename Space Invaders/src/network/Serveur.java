@@ -9,6 +9,14 @@ package network;
  */
 public class Serveur {
 	
+	protected int port;
+	
+	
+	
+	public Serveur (int port) {
+		this.port=port;
+	}
+	
 	
 	
 

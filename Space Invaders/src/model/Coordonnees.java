@@ -7,6 +7,8 @@ public class Coordonnees {
 	
 	public final static int HAUTEURCONSOLE=9;
 	public final static int LONGUEURCONSOLE=10;
+	public final static int SHIP_START_X_CONSOLE=4;
+	public final static int SHIP_START_Y_CONSOLE=9;
 	
 	public final static int INVADER_HEIGHT=36;
 	public final static int INVADER_WIDTH=55;

@@ -6,6 +6,7 @@ import model.Jeu;
 import controller.TimerLecture;
 import view.View;
 import controller.Controller;
+import model.Ennemi;
 
 public class Main {
 
@@ -31,13 +32,15 @@ public class Main {
 		int C = Coordonnees.HAUTEURCONSOLE;
 		int L = Coordonnees.LONGUEURCONSOLE;
 		
+		
 		char[][] plateau = new char[C][L];
 		
 		for(int x = 0 ; x < C ; x++) {
 			for(int y = 0 ; y < L ; y++) {
 				plateau[x][y] = ' ';
 			};
-			plateau[4][9] ='$';
+			plateau[Ennemi.positionEnnemi][0] = '*';
+			plateau[Coordonnees.SHIP_START_X_CONSOLE][Coordonnees.SHIP_START_Y_CONSOLE] ='$';
 		};
 		
 		for(int loop = 0 ; loop < C+2+2*C ; loop++)System.out.print('-');

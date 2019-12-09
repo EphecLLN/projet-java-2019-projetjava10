@@ -12,7 +12,7 @@ public class Ennemi extends Entite{
 		this.hauteur=Coordonnees.INVADER_HEIGHT;
 		this.direction=dir;
 	}
-
+	public static int positionEnnemi=0;
 	@Override
 	public void nextTurn() { //une metode qui est appellée automatiquement par le Timer lecture
 		int x_max = x+2*largeur+Coordonnees.MOVE_INVADER_X;		
@@ -21,9 +21,10 @@ public class Ennemi extends Entite{
 		if (enVie) {	
 			if (direction) {			//si vrai, va vers la droite
 					
-			
+				
 				if (x_max < Coordonnees.MAP_WIDTH) {
 					x+=Coordonnees.MOVE_INVADER_X; // pour faire aller vers la droite
+					positionEnnemi+=1;
 				} else {
 					if(d.vitesseDifficile==true) {
 						

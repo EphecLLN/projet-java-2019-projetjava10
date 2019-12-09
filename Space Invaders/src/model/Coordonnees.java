@@ -5,6 +5,11 @@ public class Coordonnees {
 	public final static int MAP_HEIGHT=800;
 	public final static int MAP_WIDTH=1000;
 	
+	public final static int HAUTEURCONSOLE=9;
+	public final static int LONGUEURCONSOLE=10;
+	public final static int SHIP_START_X_CONSOLE=4;
+	public final static int SHIP_START_Y_CONSOLE=9;
+	
 	public final static int INVADER_HEIGHT=36;
 	public final static int INVADER_WIDTH=55;
 	public final static int INVADER_START_Y=50;
@@ -26,6 +31,8 @@ public class Coordonnees {
 	public final static int MOVE_INVADER_DIFFICILE_Y=150;
 	public final static int FINAL_MOVE_INVADER_Y=0;
 	public final static int MOVE_SHIP=10;
+	public final static int MOVE_SHIP_CONSOLE=1;
+	public final static int MOVE_MISSILE_CONSOLE=1;
 	public final static int MOVE_MISSILE=10;
 	
 	public final static int DEFENSES_A_X=450;

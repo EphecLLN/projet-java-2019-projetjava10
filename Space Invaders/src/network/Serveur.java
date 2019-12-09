@@ -14,7 +14,6 @@ import java.net.Socket;
  */
 public class Serveur {
 	
-	protected int port;
 	protected ServerSocket ss;
 	protected Socket s;
 	protected DataInputStream dataIn;
@@ -25,8 +24,7 @@ public class Serveur {
 	// Etablir une connexion
 	public void connect() throws Exception {
 		try {
-			ss = new ServerSocket(0); // 0 signifie que l'on prend le premier port disponible
-			System.out.println(ss.getLocalPort()); // Afficher le port disponible en console
+			ss = new ServerSocket(1040);
 			System.out.println("En attente du client");
 			ss.setSoTimeout(10000); // Timer permettant de fermer le socket en cas de non-connexion (après 10 secondes ici)
 			s = ss.accept();
@@ -47,6 +45,7 @@ public class Serveur {
 			System.out.println("Déconnecté");
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Erreur de déconnexion");
 		}
 	}
 	

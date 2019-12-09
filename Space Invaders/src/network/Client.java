@@ -12,16 +12,17 @@ import java.net.Socket;
  *
  */
 public class Client {
+	protected int port;
 	protected Socket s;
 	protected DataInputStream dataIn;
 	protected DataOutputStream dataOut;
-	protected int port;
 	protected String ip = "";
 	
 	
 	// Etablir la connexion
 	public void connect() throws Exception {
 		try {
+			
 			s = new Socket(ip, port);
 			System.out.println("Socket créé");
 			dataIn = new DataInputStream(s.getInputStream());

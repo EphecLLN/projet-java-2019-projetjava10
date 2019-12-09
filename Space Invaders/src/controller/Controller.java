@@ -3,6 +3,7 @@ package controller;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Arrays;
 
 import javax.swing.JLabel;
 import model.Jeu;
@@ -27,8 +28,9 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 		double hauteur = vaisseauLabel.getBounds().getHeight();
 		g.getVaisseau().setX((int)x);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
-		System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" +/* "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() +*/ "\n");
-		System.out.format("------------------------------------------------\n");
+		//System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" +/* "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() +*/ "\n");
+		//System.out.format("------------------------------------------------\n");
+		//affichageConsole();
 	}
 	
 	private void bougerGauche() {
@@ -38,15 +40,36 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 		double hauteur = vaisseauLabel.getBounds().getHeight();
 		g.getVaisseau().setX((int)x);
 		vaisseauLabel.setBounds((int)x, (int) y, (int)largeur, (int)hauteur);
-		System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" +/* "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() +*/ "\n");
-		System.out.format("------------------------------------------------\n");
+		//System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() /*+ "\n" + "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() + "\n"*/);
+		//System.out.format("------------------------------------------------\n");
+		//affichageConsole();
 	}
 	
 	private void tir() {
 		v.createMissileLabel(g.createMissile((int)vaisseauLabel.getBounds().getX()+(Coordonnees.SHIP_WIDTH/2), Coordonnees.SHIP_START_Y, true));
 		
 	}
+	
 
+
+	
+	
+	
+	
+	
+	
+
+	
+	private void affichageConsole() {
+		
+		
+		
+		System.out.format("-----------------------------------------------------\n");
+		//System.out.println(vaisseau);
+		System.out.format("-----------------------------------------------------\n");
+	}
+	
+	
 	
 	@Override
 	public void keyPressed(KeyEvent kev) {						// quand on clic sur une touche

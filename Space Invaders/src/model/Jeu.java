@@ -60,9 +60,9 @@ public class Jeu {
 			if ((b.getY()>a.getY()+a.getHauteur()) || (b.getY()+b.getHauteur() < a.getY())) {
 				return false;
 			} else {
-				System.out.println("Un : "+b.getClass().getName() +" a touché un : "+a.getClass().getName());
-				System.out.println("les positions du choc sont:\n("+a.getX()+","+a.getY()+"), B("+b.getX()+","+b.getY()+")");
-				System.out.println("----------------------------------------------------------");
+				//System.out.println("Un : "+b.getClass().getName() +" a touché un : "+a.getClass().getName());
+				//System.out.println("les positions du choc sont:\n("+a.getX()+","+a.getY()+"), B("+b.getX()+","+b.getY()+")");
+				//System.out.println("----------------------------------------------------------");
 				return true;
 			}
 		}
@@ -84,7 +84,9 @@ public class Jeu {
 		for (Missile m : missiles) {
 			if (m.joueur) {
 				for (Ennemi i : ennemis) {
-					if (checkCrash(i, m)) crashed.add(i);
+					if (checkCrash(i, m)) {
+						crashed.add(i);
+					}
 				}
 			}
 		}

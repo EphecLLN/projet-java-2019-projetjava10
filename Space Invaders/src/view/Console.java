@@ -22,6 +22,13 @@ public class Console {
 	static int C = Coordonnees.LONGUEURCONSOLE;
 	static int L = Coordonnees.HAUTEURCONSOLE;
 	static char[][] plateau = new char[C][L];
+	static int test;
+	
+	
+	public static boolean tir= false;
+	
+	
+	
 	public static void recharger(){
 		
 		//placer les ... dans les lignes
@@ -32,7 +39,13 @@ public class Console {
 					};
 					//plateau[Ennemi.positionEnnemi][0] = '*';
 					plateau[Controller.consoleX][Controller.consoleY] ='$';
+					
+					if(Controller.tir==true) {
+						plateau[Controller.consoleX][Controller.bougeMissileY] ='i';
+					}
+					
 				};
+				
 		//Afficher la premiere
 		for(int loop = 0 ; loop < C+2+2*C ; loop++)System.out.print('-');
 		System.out.println();
@@ -48,13 +61,14 @@ public class Console {
 			System.out.print('|');
 			System.out.println();
 		}
-		
-		
+
 		
 		//afficher la derniere lignes
 		for(int loop = 0 ; loop < C+2+2*C ; loop++)System.out.print('-');
 		System.out.println('\n'+"Position :"+Controller.consoleX);
-		}
+	}
+	
+	
 	
 		
 }

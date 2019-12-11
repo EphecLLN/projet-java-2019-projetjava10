@@ -7,7 +7,6 @@ import controller.TimerLecture;
 import view.View;
 import controller.Controller;
 import model.Ennemi;
-import model.VaisseauConsole;
 import view.Console;
 
 public class Main {

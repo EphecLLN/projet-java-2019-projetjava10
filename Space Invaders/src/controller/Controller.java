@@ -33,8 +33,6 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 		//System.out.format("------------------------------------------------\n");
 		//affichageConsole();
 		consoleX=consoleX+1;
-		System.out.println(consoleX);
-		Console.recharger();
 		return consoleX;
 	}
 	
@@ -49,13 +47,21 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 		//System.out.format("------------------------------------------------\n");
 		//affichageConsole();
 		consoleX=consoleX-1;
-		Console.recharger();
 		return consoleX;
 	}
 	
-	private void tir() {
+	private int  tir() {
 		v.createMissileLabel(g.createMissile((int)vaisseauLabel.getBounds().getX()+(Coordonnees.SHIP_WIDTH/2), Coordonnees.SHIP_START_Y, true));
+		 
 		
+		bougeMissileX=bougeMissileX;
+		bougeMissileY=bougeMissileY-1;
+		tir = true;
+		if (bougeMissileY<0) {
+			bougeMissileY=Coordonnees.SHIP_START_Y_CONSOLE-1;
+		}
+		
+		return bougeMissileY;
 	}
 	
 
@@ -81,7 +87,9 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 	//TEST CONSOLE --------------------------------------------------------
 	 public static int consoleX=Coordonnees.SHIP_START_X_CONSOLE;
 	 public static int consoleY=Coordonnees.SHIP_START_Y_CONSOLE;
-	 
+	 public static int bougeMissileY =consoleY;
+	 public static int bougeMissileX =consoleX;
+	 public static boolean tir=Console.tir;
 	 
 	 
 	 

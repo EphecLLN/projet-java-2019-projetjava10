@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.BorderLayout;
+import controller.Controller;
 import java.awt.Dimension;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -114,7 +115,7 @@ public class View {
 	}
 	
 	public void refresh() {	//methode appellee toutes les 100 millisecondes dans TimerLecture
-		
+		Console.recharger();
 		createMissileLabels();
 		createEnnemiLabels();
 		

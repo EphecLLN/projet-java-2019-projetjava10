@@ -13,6 +13,7 @@ import controller.Entite;
 public class Jeu {
 	
 	private List<Missile> missiles;
+	private List<MissileConsole> missilesConsole;
 	private List<Ennemi> ennemis;
 	Vaisseau vaisseau;
 	private Random rand;

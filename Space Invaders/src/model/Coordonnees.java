@@ -10,6 +10,8 @@ public class Coordonnees {
 	public final static int SHIP_START_X_CONSOLE=15;
 	public final static int SHIP_START_Y_CONSOLE=9;
 	
+	
+	
 	public final static int INVADER_HEIGHT=36;
 	public final static int INVADER_WIDTH=55;
 	public final static int INVADER_START_Y=50;

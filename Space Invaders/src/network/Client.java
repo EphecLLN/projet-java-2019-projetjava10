@@ -15,14 +15,13 @@ public class Client {
 	protected Socket s;
 	protected DataInputStream dataIn;
 	protected DataOutputStream dataOut;
-	protected int port;
 	protected String ip = "";
 	
 	
 	// Etablir la connexion
 	public void connect() throws Exception {
 		try {
-			s = new Socket(ip, port);
+			s = new Socket(s.getLocalAddress(), 1040);   // On chosit le port 1040
 			System.out.println("Socket créé");
 			dataIn = new DataInputStream(s.getInputStream());
 			dataOut = new DataOutputStream(s.getOutputStream());
@@ -40,6 +39,7 @@ public class Client {
 			System.out.println("Déconnecté");
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Erreur de déconnexion");
 		}
 	}
 	

@@ -31,7 +31,7 @@ public class Console {
 						plateau[x][y] = ' ';
 					};
 					//plateau[Ennemi.positionEnnemi][0] = '*';
-					//plateau[Controller.consoleX][Controller.consoleY] ='$';
+					plateau[Controller.consoleX][Controller.consoleY] ='$';
 				};
 		//Afficher la premiere
 		for(int loop = 0 ; loop < C+2+2*C ; loop++)System.out.print('-');

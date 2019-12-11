@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import model.Jeu;
 import model.Coordonnees;
 import view.View;
+import view.Console;
 
 public class Controller implements KeyListener{ //KeyListener --> pour les touches du clavier
 	private JLabel vaisseauLabel;
@@ -21,7 +22,7 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 		this.vaisseauLabel = v.getLabelShip();
 	}
 	
-	private void bougerDroite() {
+	private  int bougerDroite() {
 		double x = vaisseauLabel.getBounds().getX()+Coordonnees.MOVE_SHIP;
 		double y = vaisseauLabel.getBounds().getY();
 		double largeur = vaisseauLabel.getBounds().getWidth();
@@ -31,9 +32,13 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 		//System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() + "\n" +/* "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() +*/ "\n");
 		//System.out.format("------------------------------------------------\n");
 		//affichageConsole();
+		consoleX=consoleX+1;
+		System.out.println(consoleX);
+		Console.recharger();
+		return consoleX;
 	}
 	
-	private void bougerGauche() {
+	private  int bougerGauche() {
 		double x = vaisseauLabel.getBounds().getX()-Coordonnees.MOVE_SHIP;
 		double y = vaisseauLabel.getBounds().getY();
 		double largeur = vaisseauLabel.getBounds().getWidth();
@@ -43,6 +48,9 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 		//System.out.format("Coordonnées X du joueur :" + "" + vaisseauLabel.getBounds().getX() /*+ "\n" + "Coordonnées Y du joueur :" + "" + vaisseauLabel.getBounds().getY() + "\n"*/);
 		//System.out.format("------------------------------------------------\n");
 		//affichageConsole();
+		consoleX=consoleX-1;
+		Console.recharger();
+		return consoleX;
 	}
 	
 	private void tir() {
@@ -70,6 +78,13 @@ public class Controller implements KeyListener{ //KeyListener --> pour les touch
 	}
 	
 	
+	//TEST CONSOLE --------------------------------------------------------
+	 public static int consoleX=Coordonnees.SHIP_START_X_CONSOLE;
+	 public static int consoleY=Coordonnees.SHIP_START_Y_CONSOLE;
+	 
+	 
+	 
+	 
 	
 	@Override
 	public void keyPressed(KeyEvent kev) {						// quand on clic sur une touche

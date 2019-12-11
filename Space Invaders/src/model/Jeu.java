@@ -41,7 +41,7 @@ public class Jeu {
 
 	public void init() {
 	vaisseau = new Vaisseau(Coordonnees.SHIP_START_X , Coordonnees.SHIP_START_Y);
-
+	 
 		for(int i = 1; i <= Difficultes.nbrEnnemi; i++){
 			createEnnemi(Difficultes.positionStart,Coordonnees.INVADER_START_Y,true);
 			Difficultes.positionStart=Difficultes.positionStart-100;

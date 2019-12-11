@@ -12,12 +12,18 @@ public class Ennemi extends Entite{
 		this.hauteur=Coordonnees.INVADER_HEIGHT;
 		this.direction=dir;
 	}
+	
+	
 	public static int positionEnnemi=0;
 	@Override
 	public void nextTurn() { //une metode qui est appellée automatiquement par le Timer lecture
 		int x_max = x+2*largeur+Coordonnees.MOVE_INVADER_X;		
 		int x_min = x-largeur-Coordonnees.MOVE_INVADER_X;
 		
+		
+		
+		 
+		                                  
 		if (enVie) {	
 			if (direction) {			//si vrai, va vers la droite
 					

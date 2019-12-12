@@ -49,6 +49,7 @@ public class Client {
 		}
 	}
 	
+	// Non - fonctionnel
 	public static void main(String[] args) {
 		Client client = new Client();
 		try {

@@ -5,6 +5,8 @@ package network;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
@@ -12,19 +14,23 @@ import java.net.Socket;
  *
  */
 public class Client {
-	protected Socket s;
-	protected DataInputStream dataIn;
-	protected DataOutputStream dataOut;
-	protected String ip = "";
+	protected static ServerSocket ss;
+	protected static Socket s;
+	protected static DataInputStream dataIn;
+	protected static DataOutputStream dataOut;
+	protected static int port = s.getPort();
+	protected static InetAddress adresseIp = s.getInetAddress();
 	
 	
 	// Etablir la connexion
 	public void connect() throws Exception {
 		try {
-			s = new Socket(s.getLocalAddress(), 1040);   // On chosit le port 1040
+			s = new Socket(adresseIp, port);
 			System.out.println("Socket créé");
+			
 			dataIn = new DataInputStream(s.getInputStream());
 			dataOut = new DataOutputStream(s.getOutputStream());
+			
 			System.out.println("Connecté");
 			
 		} catch (Exception e) {
@@ -42,6 +48,21 @@ public class Client {
 			System.out.println("Erreur de déconnexion");
 		}
 	}
+	
+	public static void main(String[] args) {
+		Client client = new Client();
+		try {
+			client.connect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
 	
 	
 	

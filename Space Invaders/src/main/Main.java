@@ -27,13 +27,6 @@ public class Main {
 		Console.recharger();
 		
 		
-		//colonnes et lignes :
-	
-	
-		//créer le tableau
-		
-		
-		
 		
 	
 		}
